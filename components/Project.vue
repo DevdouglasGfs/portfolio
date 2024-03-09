@@ -9,7 +9,7 @@ const toggleDetails = useToggle(showTechnicalDetails);
 <template>
     <article class="flex flex-col w-full md:landscape:grid md:landscape:grid-cols-2 gap-6 lg:gap-16">
         <div class="flex flex-col self-stretch gap-3 md:landscape:col-span-1">
-            <div class="flex flex-wrap items-center gap-3 justify-between self-stretch">
+            <div class="flex flex-wrap items-center gap-1 justify-between self-stretch">
                 <h3 class="text-lg lg:text-2xl capitalize font-bold leading-normal">{{ title }}</h3>
                 <div class="text-md lg:text-lg leading-normal"><time :datetime="started">
                         {{ typeof started === 'string' ? started : useDateFormat(started,
