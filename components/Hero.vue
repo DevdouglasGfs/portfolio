@@ -6,7 +6,7 @@ type topics = {
 }
 const topics: topics[] = [{
     name: "Quem sou eu",
-    to: "#how-i-am",
+    to: "#who-i-am",
     icon: "uil:question-circle"
 }, {
     name: "Minhas habilidades",
