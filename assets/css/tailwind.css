@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body {
+        @apply max-w-full overflow-x-hidden min-h-screen bg-ntl-900 text-ntl-0 font-secundary;
+    }
+}
+
+@layer components {
+    .button {
+        @apply px-6 pt-4 pb-2 rounded-sd capitalize text-base lg:text-md leading-tight
+    }
+
+    .portfolio-section {
+        @apply px-6 lg:px-16;
+    }
+
+}
+
+@layer utilities {
+    .title {
+        @apply font-primary text-2xl lg:text-5xl capitalize leading-tight;
+    }
+}
+
+p a {
+    @apply italic text-primary-400 hover:active:underline hover:active:underline-offset-4 decoration-dashed;
+}
