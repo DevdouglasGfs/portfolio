@@ -23,7 +23,8 @@ const topics: topics[] = [{
 }]
 </script>
 <template>
-    <section class="portfolio-section relative grid grid-cols-2 lg:grid-cols-4 gap-x-5 h-svh w-full max-w-full overflow-hidden">
+    <section
+        class="portfolio-section relative grid grid-cols-2 lg:grid-cols-4 gap-x-5 h-svh w-full max-w-full overflow-hidden">
         <svg class="max-lg:block absolute z-0 isolate top-0 right-0" width="350" height="430" viewBox="0 0 350 430"
             fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_31_41)">
@@ -106,7 +107,8 @@ const topics: topics[] = [{
                 Open to work
                 <div class="text-secundary-200">|</div>
             </div>
-            <div class="hidden lg:block h-full relative overflow-hidden rounded-3xl ring-1 ring-ntl-700">
+            <div
+                class="hidden lg:block h-full relative overflow-hidden rounded-3xl ring-1 ring-ntl-700 *:hover:active:bg-primary-600">
                 <div class="p-6 lg:p-20 rounded-full bg-ntl-800 -top-6 -left-6 absolute">
                     <icon class="size-16 lg:size-[100px] text-ntl-100" name="uil:vuejs" />
                 </div>
@@ -115,6 +117,12 @@ const topics: topics[] = [{
                 </div>
                 <div class="p-8 lg:p-20 rounded-full bg-ntl-800 top-1/2 right-1/2 lg:top-[213px] lg:right-[181px] absolute">
                     <icon class="size-9 lg:size-[100px] text-ntl-100" name="mdi:language-javascript" />
+                </div>
+                <div class="p-6 lg:p-20 rounded-full bg-ntl-800 bottom-14 right-24 absolute">
+                    <icon class="size-16 lg:size-[100px] text-ntl-100" name="carbon:logo-figma" />
+                </div>
+                <div class="p-8 lg:p lg:p-20 rounded-full bg-ntl-800 bottom-96 left-0 absolute">
+                    <icon class="size-16 lg:size-[100px] text-ntl-100" name="mdi:nuxt" />
                 </div>
             </div>
         </div>
