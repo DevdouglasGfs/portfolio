@@ -17,6 +17,9 @@
         @apply px-6 lg:px-16;
     }
 
+    .section-with-observer {
+        @apply transition-transform duration-500 ease-in translate-y-16;
+    }
 }
 
 @layer utilities {
