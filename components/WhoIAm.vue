@@ -14,12 +14,16 @@ const resumePoints: Array<{ title: string; icon: string }> = [{
 }];
 
 const section = ref<HTMLElement>()
+const triggered = ref(false);
 const sectionVisible = useElementVisibility(section);
+watch(sectionVisible, (v) => {
+    if (v === true) triggered.value = true;
+})
 </script>
 <template>
-    <section ref="section"
-        class="relative h-max flex gap-6 overflow-visible portfolio-section w-full transition-transform duration-500 ease-in translate-y-16"
-        :class="{ '!translate-y-0': sectionVisible }">
+    <section ref="section" id="who-i-am"
+        class="relative h-max flex gap-6 overflow-visible portfolio-section w-full section-with-observer"
+        :class="{ '!translate-y-0': sectionVisible || triggered }">
         <svg class="max-lg:block absolute -z-10 isolate top-0 left-0 max-w-full overflow-x-hidden" width="650" height="600"
             viewBox="0 0 650 300" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_31_41)">
@@ -55,7 +59,7 @@ const sectionVisible = useElementVisibility(section);
                     da programação.
                 </p>
                 <NuxtImg class="self-stretch h-[300px] lg:h-[465px] object-scale-down"
-                    src="/assets/images/characters/pondering.png" />
+                    src="/assets/images/characters/pondering.png" alt="" />
             </div>
             <div class="self-stretch flex flex-col gap-3 basis-1/2">
                 <h3 class="font-bold leading-tight text-md lg:text-lg">Resumo</h3>
