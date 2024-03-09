@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const resumePoints: Array<{ title: string; icon: string }> = [{
-    title: "Nasci em Diamantina-MG",
-    icon: "uil:map-marker"
+    title: "Desenvolvedor Front-End com 3 anos de prática",
+    icon: "uil:3-plus"
 }, {
-    title: "Sou fascinado pela programação",
+    title: "Fascinado pela programação",
     icon: "uil:heart"
 }, {
     title: "Me formei em Técnico de Informática em 2023",
@@ -11,6 +11,12 @@ const resumePoints: Array<{ title: string; icon: string }> = [{
 }, {
     title: "Gosto de aprender coisas novas e técnologias",
     icon: "uil:code-branch"
+},{
+    title: "Experiente com mais de 6 linguagens e frameworks",
+    icon: "mdi:code-braces"
+},{
+    title: "Almejo me tornar um desenvolvedor FullStack",
+    icon: "uil:cloud"
 }];
 
 const section = ref<HTMLElement>()
@@ -65,7 +71,7 @@ watch(sectionVisible, (v) => {
                 <h3 class="font-bold leading-tight text-md lg:text-lg">Resumo</h3>
                 <ul class="self-stretch flex flex-wrap gap-6">
                     <li v-for="point in resumePoints">
-                        <Card class="flex-auto max-w-40 md:landscape:max-w-36" :title="point.title" :icon="point.icon" />
+                        <Card class="flex-auto first-letter:capitalize normal-case max-w-40 md:landscape:max-w-36" :title="point.title" :icon="point.icon" />
                     </li>
                 </ul>
             </div>
