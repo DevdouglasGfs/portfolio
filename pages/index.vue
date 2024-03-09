@@ -8,23 +8,15 @@ useSeoMeta({
     description: "Portfólio do programador Douglas Silva",
     ogDescription: "Portfólio de Douglas Silva",
     ogLocale: "pt-br",
-    ogType: "profile",
+    ogType: "website",
     twitterCard: "summary"
-})
-
-const pageLoaded = ref(false);
-useNuxtApp().hook('page:start', () => {
-    pageLoaded.value = false
-})
-useNuxtApp().hook('page:finish', () => {
-    pageLoaded.value = true
 })
 </script>
 <template>
-    <Loadder v-if="!pageLoaded" />
-    <main class="grid grid-cols-2 auto-rows-min gap-56 lg:grid-cols-4 *:col-span-2 *:lg:col-span-4">
+    <main class="grid grid-cols-2 auto-rows-min gap-56 lg:grid-cols-4 *:col-span-2 *:lg:col-span-4 pb-20">
         <Hero />
         <WhoIAm />
         <Skills />
+        <Projects />
     </main>
 </template>

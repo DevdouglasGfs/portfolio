@@ -70,6 +70,10 @@ const knowledgeExpecific: Array<cardProps> = [{
     title: "Design patterns",
 }, {
     title: "POO"
+},{
+    title: "API"
+},{
+    title: "Consumo de API"
 }];
 
 const showHardSkills = ref(true);
@@ -124,8 +128,9 @@ const changeActiveElement = (el: 'soft' | 'hard' | 'knowledge') => {
                         @keyup.space.exact="changeActiveElement('soft')">
                         <h3 class="text-md lg:text-lg mt-2 font-bold leading-tight capitalize">Soft skills</h3>
                         <div class="p-1 flex">
-                            <Icon class="text-lg" v-if="showSoftSkills" name="mdi:arrow-collapse-vertical" />
-                            <Icon class="text-lg" v-else name="mdi:arrow-expand-vertical" />
+                            <Icon class="text-lg text-ntl-100" v-if="showSoftSkills" name="mdi:arrow-collapse-vertical" />
+                            <Icon class="text-lg text-ntl-100" v-else name="mdi:arrow-expand-vertical" />
+                            <span class="sr-only">Expandir lista de soft skills</span>
                         </div>
                     </div>
                     <ul class="flex flex-wrap gap-3">
@@ -146,8 +151,9 @@ const changeActiveElement = (el: 'soft' | 'hard' | 'knowledge') => {
                             <h4 class="text-md lg:text-lg mt-2 font-bold leading-tight capitalize">
                                 Linguagens e frameworks
                             </h4>
-                            <Icon class="text-lg" v-if="showHardSkills" name="mdi:arrow-collapse-vertical" />
-                            <Icon class="text-lg" v-else name="mdi:arrow-expand-vertical" />
+                            <Icon class="text-lg text-ntl-100" v-if="showHardSkills" name="mdi:arrow-collapse-vertical" />
+                            <Icon class="text-lg text-ntl-100" v-else name="mdi:arrow-expand-vertical" />
+                            <span class="sr-only">Expandir lista de hard skills</span>
                         </div>
                         <ul class="self-stretch flex flex-wrap items-center gap-3 w-full">
                             <li v-show="showHardSkills" class="flex-auto basis-3/12 size-full" v-for="skill in hardSkills">
@@ -162,12 +168,13 @@ const changeActiveElement = (el: 'soft' | 'hard' | 'knowledge') => {
                             @keyup.enter.exact="changeActiveElement('knowledge')">
                             <h4 class="text-md lg:text-lg mt-2 font-bold leading-tight capitalize">Conhecimento sobre
                                 conceitos</h4>
-                            <Icon class="text-lg" v-if="showKnowledge" name="mdi:arrow-collapse-vertical" />
-                            <Icon class="text-lg" v-else name="mdi:arrow-expand-vertical" />
+                            <Icon class="text-lg text-ntl-100" v-if="showKnowledge" name="mdi:arrow-collapse-vertical" />
+                            <Icon class="text-lg text-ntl-100" v-else name="mdi:arrow-expand-vertical" />
+                            <span class="sr-only">Expandir lista de conhecimento sobre conceitos</span>
                         </div>
-                        <ul class="flex flex-wrap gap-3">
+                        <ul class="flex flex-wrap gap-3 p-1">
                             <li v-show="showKnowledge" class="flex-auto basis-3/12" v-for="skill in knowledgeExpecific">
-                                <Card class="w-full" :title="skill.title" />
+                                <Card class="w-full pt-4" :title="skill.title" />
                             </li>
                         </ul>
                     </section>
