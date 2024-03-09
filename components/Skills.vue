@@ -81,11 +81,17 @@ const sectionVisible = useElementVisibility(section);
 watch(sectionVisible, (v) => {
     if (v === true) triggered.value = true;
 });
+
+const changeActiveElement = (el: 'soft' | 'hard' | 'knowledge') => {
+    if (el === 'soft') showHardSkills.value = false, showKnowledge.value = false, showSoftSkills.value = !showSoftSkills.value;
+    else if (el === 'hard') showSoftSkills.value = false, showKnowledge.value = false, showHardSkills.value = !showHardSkills.value;
+    else showSoftSkills.value = false, showHardSkills.value = false, showKnowledge.value = !showKnowledge.value;
+}
 </script>
 <template>
     <section ref="section" id="my-skills"
         class="portfolio-section relative flex gap-6 overflow-hidden section-with-observer"
-        :class="{ 'translate-y-0': sectionVisible||triggered }">
+        :class="{ 'translate-y-0': sectionVisible || triggered }">
         <div class="size-max">
             <Icon class="title text-primary-500" name="mdi:briefcase-outline" />
         </div>
@@ -114,17 +120,17 @@ watch(sectionVisible, (v) => {
                 <!-- soft -->
                 <div class="flex flex-col gap-3 flex-auto md:landscape:col-span-1 md:landscape:min-w-1/2">
                     <div tabindex="0" class="flex self-stretch items-center gap-3 py-1"
-                        @click="showSoftSkills = !showSoftSkills" @keyup.enter.exact="showSoftSkills = !showSoftSkills"
-                        @keyup.space.exact="showSoftSkills = !showSoftSkills">
+                        @click="changeActiveElement('soft')" @keyup.enter.exact="changeActiveElement('soft')"
+                        @keyup.space.exact="changeActiveElement('soft')">
                         <h3 class="text-md lg:text-lg mt-2 font-bold leading-tight capitalize">Soft skills</h3>
                         <div class="p-1 flex">
                             <Icon class="text-lg" v-if="showSoftSkills" name="mdi:arrow-collapse-vertical" />
                             <Icon class="text-lg" v-else name="mdi:arrow-expand-vertical" />
                         </div>
                     </div>
-                    <ul class="flex flex-wrap items-center gap-3">
-                        <li v-show="showSoftSkills" class="flex-auto" v-for="skill in softSkills">
-                            <Card class="w-full" :title="skill.title" :icon="skill.icon" />
+                    <ul class="flex flex-wrap gap-3">
+                        <li v-show="showSoftSkills" class="flex-auto basis-3/12" v-for="skill in softSkills">
+                            <Card class="size-full" :title="skill.title" :icon="skill.icon" />
                         </li>
                     </ul>
                     <NuxtImg class="w-full min-w-[200px] h-[300px] object-scale-down lg:h-[400px]"
@@ -135,8 +141,8 @@ watch(sectionVisible, (v) => {
                     <h3 class="text-lg lg:text-2xl font-bold leading-tight capitalize">Hard skills</h3>
                     <section class="self-stretch">
                         <div tabindex="0" class="flex self-stretch items-center gap-3 py-1"
-                            @click="showHardSkills = !showHardSkills" @keyup.space.exact="showHardSkills = !showHardSkills"
-                            @keyup.enter.exact="showHardSkills = !showHardSkills">
+                            @click="changeActiveElement('hard')" @keyup.space.exact="changeActiveElement('hard')"
+                            @keyup.enter.exact="changeActiveElement('hard')">
                             <h4 class="text-md lg:text-lg mt-2 font-bold leading-tight capitalize">
                                 Linguagens e frameworks
                             </h4>
@@ -152,8 +158,8 @@ watch(sectionVisible, (v) => {
                     </section>
                     <section class="self-stretch flex flex-col gap-3">
                         <div tabindex="0" class="flex self-stretch items-center gap-3 py-1"
-                            @click="showKnowledge = !showKnowledge" @keyup.space.exact="showKnowledge = !showKnowledge"
-                            @keyup.enter.exact="showKnowledge = !showKnowledge">
+                            @click="changeActiveElement('knowledge')" @keyup.space.exact="changeActiveElement('knowledge')"
+                            @keyup.enter.exact="changeActiveElement('knowledge')">
                             <h4 class="text-md lg:text-lg mt-2 font-bold leading-tight capitalize">Conhecimento sobre
                                 conceitos</h4>
                             <Icon class="text-lg" v-if="showKnowledge" name="mdi:arrow-collapse-vertical" />
