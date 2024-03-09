@@ -144,7 +144,7 @@ watch(sectionVisible, (v) => {
                             <Icon class="text-lg" v-else name="mdi:arrow-expand-vertical" />
                         </div>
                         <ul class="self-stretch flex flex-wrap items-center gap-3 w-full">
-                            <li v-show="showHardSkills" class="flex-auto max-w-[45%] size-full" v-for="skill in hardSkills">
+                            <li v-show="showHardSkills" class="flex-auto basis-3/12 size-full" v-for="skill in hardSkills">
                                 <Card :title="skill.title" :icon="skill.icon" :icon-lg="true"
                                     class="p-3 md:landscape:p-6 rounded-xl text-base lg:text-md flex flex-col items-center gap-2 min-w-16 md:landscape:min-w-28 w-full" />
                             </li>
@@ -160,7 +160,7 @@ watch(sectionVisible, (v) => {
                             <Icon class="text-lg" v-else name="mdi:arrow-expand-vertical" />
                         </div>
                         <ul class="flex flex-wrap gap-3">
-                            <li v-show="showKnowledge" class="flex-auto" v-for="skill in knowledgeExpecific">
+                            <li v-show="showKnowledge" class="flex-auto basis-3/12" v-for="skill in knowledgeExpecific">
                                 <Card class="w-full" :title="skill.title" />
                             </li>
                         </ul>
