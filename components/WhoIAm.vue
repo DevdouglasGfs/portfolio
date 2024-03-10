@@ -6,8 +6,8 @@ const resumePoints: Array<{ title: string; icon: string }> = [{
     title: "Fascinado pela programação",
     icon: "uil:heart"
 }, {
-    title: "Me formei em Técnico de Informática em 2023",
-    icon: "mdi:certificate-outline"
+    title: "Experiência em projetos solo e em time",
+    icon: "fluent:people-team-16-regular"
 }, {
     title: "Gosto de aprender coisas novas e técnologias",
     icon: "uil:code-branch"
@@ -28,7 +28,7 @@ watch(sectionVisible, (v) => {
 </script>
 <template>
     <section ref="section" id="who-i-am"
-        class="relative h-max flex gap-6 overflow-visible portfolio-section w-full section-with-observer"
+        class="relative flex gap-3 md:landscape:gap-6 overflow-visible portfolio-section w-full section-with-observer"
         :class="{ '!translate-y-0': sectionVisible || triggered }">
         <svg class="max-lg:block absolute -z-10 isolate top-0 left-0 max-w-full overflow-x-hidden" width="650" height="600"
             viewBox="0 0 650 300" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,26 +52,23 @@ watch(sectionVisible, (v) => {
         <div class="size-max">
             <icon class="title text-primary-500" name="uil:question-circle" />
         </div>
-        <div class="self-stretch flex max-md:flex-col gap-8">
-            <div class="flex flex-col gap-3">
+        <div class="self-stretch flex flex-col md:landscape:grid md:landscape:grid-cols-2 gap-8">
+            <div class="flex flex-col gap-3 md:landscape:col-span-1">
                 <h2 class="title">Quem sou eu</h2>
                 <p class="text-base lg:text-lg max-w-prose mx-auto leading-relaxed">
                     Eu sou um programador Front-End com 3 anos de experiências prática realizadas com e sem um time. Já
-                    trabalhei com diversas técnologias como: <NuxtLink to="https://vitejs.dev/">Vite.js</NuxtLink>,
-                    <NuxtLink to="https://vuejs.org/">Vue.js</NuxtLink>, <NuxtLink to="https://sass-lang.com/">Sass
-                    </NuxtLink>, <NuxtLink to="https://expressjs.com/">Express</NuxtLink>, <NuxtLink
-                        to="https://nodejs.org/en">Node.js</NuxtLink>, entre outras. O meu
+                    trabalhei com diversas técnologias e sou experiente em <NuxtLink to="https://vuejs.org/">Vue.js</NuxtLink>. O meu
                     foco desde que comecei é me tornar um programador Full-Stack e, posteriormente, explorar outros campos
                     da programação.
                 </p>
-                <NuxtImg class="self-stretch h-[300px] lg:h-[465px] object-scale-down"
-                    src="/assets/images/characters/pondering.png" alt="" />
+                <NuxtImg class="self-stretch h-[300px] lg:h-[400px] object-scale-down w-full"
+                    src="/assets/images/characters/pondering.png" alt="" placeholder/>
             </div>
-            <div class="self-stretch flex flex-col gap-3 basis-1/2">
+            <div class="self-stretch flex flex-col gap-3 basis-1/2 md:landscape:col-span-1">
                 <h3 class="font-bold leading-tight text-md lg:text-lg">Resumo</h3>
                 <ul class="self-stretch flex flex-wrap gap-6">
                     <li v-for="point in resumePoints">
-                        <Card class="flex-auto first-letter:capitalize normal-case max-w-40 md:landscape:max-w-36" :title="point.title" :icon="point.icon" />
+                        <Card tabindex="-1" class="flex-auto first-letter:capitalize normal-case max-w-40 md:landscape:max-w-36" :title="point.title" :icon="point.icon" />
                     </li>
                 </ul>
             </div>
