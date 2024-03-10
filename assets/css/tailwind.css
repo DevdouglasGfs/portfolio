@@ -29,5 +29,23 @@
 }
 
 p a {
-    @apply italic text-primary-400 hover:active:underline hover:active:underline-offset-4 decoration-dashed;
+    @apply italic font-semibold text-primary-400 hover:active:underline hover:active:underline-offset-4 decoration-dashed tracking-wide;
+}
+
+.hide-scrollbar {
+    overflow: auto;
+    -ms-overflow-style: none;
+    /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* for Firefox */
+    &::-webkit-scrollbar {
+        display: none;
+        /* for Chrome, Safari, and Opera */
+    }
 }
