@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body {
+        @apply max-w-full overflow-x-hidden min-h-screen bg-ntl-900 text-ntl-0 font-secundary;
+    }
+}
+
+@layer components {
+    .button {
+        @apply px-6 pt-4 pb-2 rounded-sd capitalize text-base lg:text-md leading-tight
+    }
+
+    .portfolio-section {
+        @apply px-6 lg:px-16;
+    }
+
+    .section-with-observer {
+        @apply transition-transform duration-500 ease-in translate-y-16;
+    }
+}
+
+@layer utilities {
+    .title {
+        @apply font-primary text-2xl lg:text-5xl capitalize leading-tight;
+    }
+}
+
+p a {
+    @apply italic font-semibold text-primary-400 hover:active:underline hover:active:underline-offset-4 decoration-dashed tracking-wide;
+}
+
+.hide-scrollbar {
+    overflow: auto;
+    -ms-overflow-style: none;
+    /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* for Firefox */
+    &::-webkit-scrollbar {
+        display: none;
+        /* for Chrome, Safari, and Opera */
+    }
+}
