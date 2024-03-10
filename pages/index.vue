@@ -10,6 +10,12 @@ useSeoMeta({
     ogLocale: "pt-br",
     ogType: "website",
     twitterCard: "summary",
+    ogImage: {
+        type: "image/png",
+        url: "/assets/images/identity/og-image.png"
+    },
+    twitterImage: "/assets/images/identity/og-image.png",
+    ogUrl: "https://devdouglassilva.xyz",
     creator: "Douglas S. Silva",
 })
 </script>

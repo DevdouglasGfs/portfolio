@@ -39,6 +39,7 @@ const projectsList: Array<projectDTO> = [{
 }, {
     title: "Este portfólio",
     started: "08/03/2024",
+    finished: "10/03/2024",
     description: "Meu portfólio pessoal para exibir meus projetos, habilidades e informações sobre mim.",
     status: "done",
     tecnologies: [{
