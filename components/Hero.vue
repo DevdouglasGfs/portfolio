@@ -1,30 +1,27 @@
 <script setup lang="ts">
-type topics = {
-    name: string;
-    to: string;
-    icon: string;
-}
-const topics: topics[] = [{
-    name: "Quem sou eu",
+import type { cardProps } from './Card.vue';
+
+const topics: Array<cardProps & { to: string }> = [{
+    title: "Quem sou eu",
     to: "#who-i-am",
     icon: "uil:question-circle"
 }, {
-    name: "Minhas habilidades",
+    title: "Minhas habilidades",
     to: "#my-skills",
     icon: "mdi:briefcase-outline"
 }, {
-    name: "Meus projetos",
+    title: "Meus projetos",
     to: "#my-projects",
     icon: "mdi:developer-board"
 }, {
-    name: "Meus certificados",
+    title: "Meus certificados",
     to: "#my-certificates",
     icon: "mdi:certificate-outline"
 }]
 </script>
 <template>
-    <section
-        class="portfolio-section relative grid grid-cols-2 lg:grid-cols-4 gap-x-5 h-svh w-full max-w-full overflow-hidden">
+    <section ref="section"
+        class="portfolio-section relative grid grid-cols-2 lg:grid-cols-4 gap-6 h-svh w-full max-w-full overflow-hidden">
         <svg class="max-lg:block absolute z-0 isolate top-0 right-0" width="350" height="430" viewBox="0 0 350 430"
             fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_31_41)">
@@ -73,39 +70,42 @@ const topics: topics[] = [{
                                 Designer
                             </p>
                             <div class="self-stretch relative">
-                                <h1 class="title mt-1 isolate">Douglas <abbr>S.</abbr> Silva</h1>
+                                <h1 class="title mt-1 isolate">
+                                    Douglas S. Silva
+                                </h1>
                                 <span class="absolute -z-10 hero-title top-2 text-ntl-0 text-opacity-20">Douglas S.
                                     Silva</span>
                             </div>
                         </hgroup>
-                        <p class="text-base tracking-wide max-w-prose leading-tight lg:text-md">Olá, seja bem-vindo(a) ao meu portfólio.<br />
+                        <p class="text-base tracking-wide max-w-prose leading-tight lg:text-md">Olá, seja bem-vindo(a) ao
+                            meu portfólio.<br /><br />
                             Separei alguns tópicos para você conhecer a mim, o meu trabalho e minhas qualificações para
                             estar atuando na área e na sua empresa</p>
                     </div>
                     <ul class="flex flex-initial flex-wrap items-center gap-6">
                         <li v-for="topic in topics" class="block">
-                            <Card :title="topic.name" :icon="topic.icon" @click="navigateTo(topic.to)"
+                            <Card :title="topic.title" :icon="topic.icon" @click="navigateTo(topic.to)"
                                 class="hover:active:-translate-y-3.5 hover:active:shadow-lg hover:active:shadow-secundary-600/25" />
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="flex items-center gap-2 self-stretch">
-                <button @click=""
-                    class="button font-bold transition-colors duration-100 ease-in-out bg-gradient-to-r from-secundary-600 to-secundary-700 hover:active:from-secundary-400 hover:active:to-secundary-500">Hire
-                    Me!</button>
+                <NuxtLink to="https://www.instagram.com/fullstack_douglas_silva?igsh=Z3JlbW9lcWhjcW9t" target="_blank"
+                    class="button font-semibold transition-colors ease-in-out duration-200 lg:duration-300 tracking-wide bg-gradient-to-r from-secundary-600 to-secundary-700 hover:active:from-secundary-700 hover:active:to-secundary-800">
+                    Contrate-Me!</NuxtLink>
                 <NuxtLink to="https://github.com/DevDouglasGfs"
-                    class="flex gap-2 button transition-shadow duration-200 ease-in-out hover:active:ring-1 hover:active:ring-ntl-700">
-                    <icon class="text-md lg:text-lg -mt-1" name="uil:github" />
+                    class="flex items-center gap-2 button transition-shadow duration-200 ease-in-out hover:active:ring-1 hover:active:ring-ntl-700">
+                    <icon class="text-lg lg:text-lg -mt-2" name="uil:github" />
                     Github
                 </NuxtLink>
             </div>
         </div>
         <div class="contents lg:flex lg:flex-col lg:col-span-2 h-full lg:pb-6 lg:gap-6">
             <div
-                class="max-lg:absolute max-lg:top-0 max-lg:right-0 flex items-center justify-center gap-2 p-3 lg:px-14 lg:py-6 bg-secundary-700 uppercase font-primary text-base lg:text-2xl rounded-bl-sd lg:rounded-b-xl">
+                class="max-lg:absolute max-lg:top-0 max-lg:right-0 flex items-center justify-center gap-2 p-6 md:landscape:p-4 lg:px-14 lg:py-6 bg-secundary-700 uppercase font-primary text-base lg:text-2xl rounded-bl-sd lg:rounded-b-xl">
                 Open to work
-                <div class="text-secundary-200">|</div>
+                <div class="text-secundary-200 animate-[pulse_1500ms_infinite] font-bold">|</div>
             </div>
             <div
                 class="hidden lg:block h-full relative overflow-hidden rounded-3xl ring-1 ring-ntl-700 *:hover:active:bg-primary-600">
