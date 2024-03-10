@@ -20,5 +20,10 @@ export default defineNuxtConfig({
   },
   image: {
     format: ['avif', 'webp', 'png', 'jpg']
+  },
+  router: {
+    options: {
+      scrollBehaviorType: "smooth"
+    }
   }
 })
