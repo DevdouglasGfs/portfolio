@@ -41,7 +41,7 @@ const projectsList: Array<projectDTO> = [{
     started: "08/03/2024",
     finished: "10/03/2024",
     github: "https://github.com/devdouglasgfs/portfolio",
-    deployUrl: "https://taxasatuais.devdouglassilva.xyz",
+    deployUrl: "https://devdouglassilva.xyz",
     description: "Meu portfólio pessoal para exibir meus projetos, habilidades e informações sobre mim.",
     status: "done",
     tecnologies: [{
