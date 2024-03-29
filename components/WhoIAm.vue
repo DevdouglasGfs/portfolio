@@ -57,7 +57,7 @@ watch(sectionVisible, (v) => {
                 <h2 class="title">Quem sou eu</h2>
                 <p class="text-base lg:text-lg max-w-prose mx-auto leading-relaxed">
                     Eu sou um programador Front-End com 3 anos de experiências prática realizadas com e sem um time. Já
-                    trabalhei com diversas técnologias e sou experiente em <NuxtLink to="https://vuejs.org/">Vue.js</NuxtLink>. O meu
+                    trabalhei com diversas tecnologias e sou experiente em <NuxtLink to="https://vuejs.org/">Vue.js</NuxtLink>. O meu
                     foco desde que comecei é me tornar um programador Full-Stack e, posteriormente, explorar outros campos
                     da programação.
                 </p>

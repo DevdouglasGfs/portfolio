@@ -148,7 +148,7 @@ const changeActiveElement = (el: 'soft' | 'hard') => {
                         <div tabindex="0" class="flex self-stretch items-center gap-3 py-1"
                             @click="changeActiveElement('hard')" @keyup.enter.exact="changeActiveElement('hard')">
                             <h4 class="text-md lg:text-lg mt-2 font-bold leading-tight capitalize">
-                                Linguagens e frameworks
+                                Linguagens, frameworks e ferramentas
                             </h4>
                             <Icon class="text-lg text-ntl-100" v-if="showHardSkills" name="mdi:arrow-collapse-vertical" />
                             <Icon class="text-lg text-ntl-100" v-else name="mdi:arrow-expand-vertical" />
@@ -169,5 +169,6 @@ const changeActiveElement = (el: 'soft' | 'hard') => {
                     </div>
                 </div>
             </div>
-    </div>
-</section></template>
+        </div>
+    </section>
+</template>
