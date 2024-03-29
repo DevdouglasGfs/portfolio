@@ -1,75 +1,29 @@
-# Nuxt 3 Minimal Starter
+<div align="center">
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![LinkedIn cover - 1](https://github.com/DevdouglasGfs/portfolio-public/assets/105404079/615ccc98-83c6-4f36-8581-325d7e0593ac)
 
-## Setup
+</div>
 
-Make sure to install the dependencies:
+# Douglas S. Silva - Portfólio
+It is the repository of my portfolio website and contains information about its structure, features and information.
+<hr/>
 
-```bash
-# npm
-npm install
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b55ca4e7-5a23-4911-b116-54b37689e68a/deploy-status)](https://devdouglassilva.xyz)
 
-# pnpm
-pnpm install
 
-# yarn
-yarn install
+## 🚀 Technologies and Tools
+I used the following technologies and tools:
+- Nuxt.js;
+- Vue;
+- Tailwind;
+- TypeScript;
+- Figma(design);
+- Netlify(for deploy)
 
-# bun
-bun install
-```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 🔖 Contents
+- About Me;
+- Projects;
+- Certifications;
+- Contacts;
+- Skills
