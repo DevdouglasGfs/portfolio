@@ -40,6 +40,8 @@ const projectsList: Array<projectDTO> = [{
     title: "Este portfólio",
     started: "08/03/2024",
     finished: "10/03/2024",
+    github: "https://github.com/devdouglasgfs/portfolio",
+    deployUrl: "https://devdouglassilva.xyz",
     description: "Meu portfólio pessoal para exibir meus projetos, habilidades e informações sobre mim.",
     status: "done",
     tecnologies: [{
@@ -57,6 +59,31 @@ const projectsList: Array<projectDTO> = [{
     }, {
         title: "Figma",
         icon: "carbon:logo-figma"
+    }]
+},{
+    title: "Taxas atuais",
+    started: "27/03/2024",
+    finished: "28/03/2024",
+    github: "https://github.com/devdouglasgfs/taxas-atuais",
+    deployUrl: "https://taxasatuais.devdouglassilva.xyz",
+    image: "/assets/images/projects/taxas-atuais.png",
+    description: "Uma aplicação para fazer consultas sobre o valor atual das taxas usando a API do BrasilAPI.",
+    status: "done",
+    tecnologies: [{
+        title: "jQuery",
+        icon: "mdi:jquery"
+    }, {
+        title: "Figma",
+        icon: "carbon:logo-figma"
+    },{
+        title: "HTML",
+        icon: "mdi:language-html5"
+    },{
+        title: "Scss",
+        icon: "mdi:sass"
+    },{
+        title: "Consumo de API",
+        icon: "mdi:api"
     }]
 }]
 

@@ -4,16 +4,14 @@
   channel = "stable-23.11"; # "stable-23.11" or "unstable"
   # Use https://search.nixos.org/packages to  find packages
   packages = [
-    # pkgs.python3
-    # pkgs.go
+    pkgs.bun
   ];
   # Sets environment variables in the workspace
-  env = {};
+  env = { };
   # search for the extension on https://open-vsx.org/ and use "publisher.id"
   idx.extensions = [
-    # "vscodevim.vim"
+    "antfu.iconify"
   ];
   # preview configuration, identical to monospace.json
-  idx.previews = {
-  };
+  idx.previews = { };
 }
