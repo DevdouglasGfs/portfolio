@@ -126,11 +126,17 @@ const changeActiveElement = (el: 'soft' | 'hard') => {
                                 <span class="sr-only">Expandir lista de soft skills</span>
                             </div>
                         </div>
-                        <ul v-if="showSoftSkills" class="flex flex-wrap gap-3 max-h-60 overflow-y-scroll snap-y snap-mandatory p-1 hidden-scrollbar overscroll-none rounded-xl ring-1 ring-ntl-700">
-                            <li class="flex-auto basis-3/12 snap-center snap-always" v-for="skill in softSkills">
-                                <Card tabindex="-1" class="size-full" :title="skill.title" :icon="skill.icon" />
-                            </li>
-                        </ul>
+                        <Transition enter-active-class="transition-opacity duration-500 ease-in-out overflow-hidden"
+                            enter-from-class="opacity-0" enter-to-class="opacity-100"
+                            leave-active-class="transition-opacity duration-500 ease-in-out" leave-from-class="opacity-100"
+                            leave-to-class="opacity-0">
+                            <ul v-show="showSoftSkills"
+                                class="flex flex-wrap gap-3 max-h-60 overflow-y-scroll snap-y snap-mandatory p-1 hidden-scrollbar rounded-xl ring-1 ring-ntl-700">
+                                <li class="flex-auto basis-3/12 snap-center snap-always" v-for="skill in softSkills">
+                                    <Card tabindex="-1" class="size-full" :title="skill.title" :icon="skill.icon" />
+                                </li>
+                            </ul>
+                        </Transition>
                     </div>
                     <NuxtImg class="h-[300px] object-scale-down lg:h-[400px] w-full"
                         src="/assets/images/characters/waiting.png" alt="" />
@@ -148,15 +154,20 @@ const changeActiveElement = (el: 'soft' | 'hard') => {
                             <Icon class="text-lg text-ntl-100" v-else name="mdi:arrow-expand-vertical" />
                             <span class="sr-only">Expandir lista de hard skills</span>
                         </div>
-                        <ul v-show="showHardSkills" class="self-stretch flex flex-wrap items-center gap-3 w-full max-h-60 overflow-y-scroll snap-y snap-mandatory p-1 hidden-scrollbar overscroll-none rounded-xl ring-1 ring-ntl-700">
-                            <li class="flex-auto basis-3/12 snap-always snap-center w-full" v-for="skill in hardSkills">
-                                <Card tabindex="-1" :title="skill.title" :icon="skill.icon" :icon-lg="true"
-                                    class="p-3 md:landscape:p-6 rounded-xl text-base lg:text-md flex flex-col items-center gap-2 min-w-16 md:landscape:min-w-28 w-full" />
-                            </li>
-                        </ul>
+                        <Transition enter-active-class="transition-opacity duration-500 ease-in-out overflow-hidden"
+                            enter-from-class="opacity-0" enter-to-class="opacity-100"
+                            leave-active-class="transition-opacity duration-500 ease-in-out" leave-from-class="opacity-100"
+                            leave-to-class="opacity-0">
+                            <ul v-show="showHardSkills"
+                                class="self-stretch flex flex-wrap items-center gap-3 w-full max-h-60 overflow-y-scroll snap-y snap-mandatory p-1 hidden-scrollbar rounded-xl ring-1 ring-ntl-700">
+                                <li class="flex-auto basis-3/12 snap-always snap-center w-full" v-for="skill in hardSkills">
+                                    <Card tabindex="-1" :title="skill.title" :icon="skill.icon" :icon-lg="true"
+                                        class="p-3 md:landscape:p-6 rounded-xl text-base lg:text-md flex flex-col items-center gap-2 min-w-16 md:landscape:min-w-28 w-full" />
+                                </li>
+                            </ul>
+                        </Transition>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</template>
+    </div>
+</section></template>

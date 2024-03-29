@@ -48,13 +48,17 @@ const toggleDetails = useToggle(showTechnicalDetails);
                         <Icon class="text-lg text-ntl-100" v-if="showTechnicalDetails" name="mdi:arrow-collapse-vertical" />
                         <Icon class="text-lg text-ntl-100" v-else name="mdi:arrow-expand-vertical" />
                     </div>
-                    <ul v-show="showTechnicalDetails"
-                        class="self-stretch flex flex-wrap items-center gap-3 w-full max-h-60 overflow-y-scroll snap-y snap-mandatory p-1 hidden-scrollbar overscroll-none rounded-xl ring-1 ring-ntl-700">
-                        <li class="flex-initial basis-3/12 snap-always snap-center w-full" v-for="skill in tecnologies">
-                            <Card tabindex="-1" class="w-full items-center p-6 rounded-xl" :title="skill.title"
-                                :icon="skill.icon" />
-                        </li>
-                    </ul>
+                    <Transition enter-active-class="transition-opacity duration-500 ease-in-out overflow-hidden" enter-from-class="opacity-0"
+                        enter-to-class="opacity-100" leave-active-class="transition-opacity duration-500 ease-in-out"
+                        leave-from-class="opacity-100" leave-to-class="opacity-0">
+                        <ul v-show="showTechnicalDetails"
+                            class="self-stretch flex flex-wrap items-center gap-3 w-full max-h-60 overflow-y-scroll snap-y snap-mandatory p-1 hidden-scrollbar rounded-xl ring-1 ring-ntl-700">
+                            <li class="flex-initial basis-3/12 snap-always snap-center w-full" v-for="skill in tecnologies">
+                                <Card tabindex="-1" class="w-full items-center p-6 rounded-xl" :title="skill.title"
+                                    :icon="skill.icon" />
+                            </li>
+                        </ul>
+                    </Transition>
                 </div>
                 <div class="flex flex-col self-stretch gap-1 mt-1">
                     <p class="text-md lg:text-lg capitalize">Status:
