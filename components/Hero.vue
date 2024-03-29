@@ -21,7 +21,7 @@ const topics: Array<cardProps & { to: string }> = [{
 </script>
 <template>
     <section ref="section"
-        class="portfolio-section relative grid grid-cols-2 md:landscape:grid-cols-4 gap-6 h-svh w-full max-w-full overflow-hidden">
+        class="portfolio-section relative grid grid-cols-2 md:landscape:grid-cols-4 gap-6 min-h-svh w-full max-w-full overflow-hidden">
         <svg class="max-lg:block absolute z-0 isolate top-0 right-0" width="350" height="430" viewBox="0 0 350 430"
             fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_31_41)">
