@@ -7,7 +7,7 @@ const showTechnicalDetails = ref(false);
 const toggleDetails = useToggle(showTechnicalDetails);
 </script>
 <template>
-    <article class="flex flex-col w-full md:landscape:grid md:landscape:grid-cols-2 gap-6 lg:gap-16">
+    <article class="flex flex-col w-full md:landscape:grid md:landscape:grid-cols-2 gap-6 lg:gap-16 group">
         <div class="flex flex-col self-stretch gap-3 md:landscape:col-span-1">
             <div class="flex flex-wrap items-center gap-1 justify-between self-stretch">
                 <h3 class="text-lg lg:text-2xl capitalize font-bold leading-normal">{{ title }}</h3>
@@ -23,7 +23,7 @@ const toggleDetails = useToggle(showTechnicalDetails);
                 </div>
             </div>
             <div class="relative isolate self-stretch rounded-xl overflow-hidden ring-1 ring-secundary-400">
-                <NuxtImg v-if="image" class="!aspect-[16/9] object-cover w-full rounded-xl" :src="image" />
+                <NuxtImg v-if="image" class="!aspect-[16/9] object-cover w-full rounded-xl transition-[filter] duration-300 delay-300 ease-in-out brightness-50 hover:active:brightness-100 group-hover:brightness-100 group-active:brightness-100" :src="image" :alt="`Imagem do projeto: ${title}`" />
                 <div v-else class="!aspect-[16/9] object-cover w-full rounded-xl bg-ntl-800">
                     <div
                         class="select-none absolute z-10 text-ntl-100 uppercase font-primary -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
@@ -53,7 +53,7 @@ const toggleDetails = useToggle(showTechnicalDetails);
                         leave-from-class="opacity-100" leave-to-class="opacity-0">
                         <ul v-show="showTechnicalDetails"
                             class="self-stretch flex flex-wrap items-center gap-3 w-full max-h-60 overflow-y-scroll snap-y snap-mandatory p-1 hidden-scrollbar rounded-xl ring-1 ring-ntl-700">
-                            <li class="flex-initial basis-3/12 snap-always snap-center w-full" v-for="skill in tecnologies">
+                            <li class="flex-initial basis-3/12 snap-always snap-center w-full" v-for="skill in tecnologies" :key="skill.icon">
                                 <Card tabindex="-1" class="w-full items-center p-6 rounded-xl" :title="skill.title"
                                     :icon="skill.icon" />
                             </li>
@@ -72,7 +72,7 @@ const toggleDetails = useToggle(showTechnicalDetails);
                     <div class="flex flex-col gap-2">
                         <p class="text-base lg:text-md tracking-wide leading-relaxed">{{ description }}</p>
                         <NuxtLink v-if="github" :to="github" target="_blank"
-                            class="inline-flex item-center justify-center text-base lg:text-md font-bold leading-tight px-6 pt-3 pb-1 rounded-sd button bg-gradient-to-b from-primary-500 to-primary-700 hover:active:from-primary-600 hover:active:to-primary-700 tracking-wide focus:outline-secundary-200 focus:outline">
+                            class="inline-flex item-center justify-center text-base lg:text-md font-bold leading-tight px-6 pt-3 pb-1 rounded-sd button ring-1 ring-primary-300 transition-colors duration-300 ease-in hover:bg-gradient-to-b hover:active:bg-primary-600 tracking-wide focus:outline-secundary-200 focus:outline">
                             Visitar o Github do projeto</NuxtLink>
                     </div>
                 </div>
