@@ -26,5 +26,6 @@ export default defineNuxtConfig({
       scrollBehaviorType: "smooth"
     }
   },
-  ogImage: { enabled: false }
+  ogImage: { enabled: false },
+  schemaOrg: {enabled: false}
 })
