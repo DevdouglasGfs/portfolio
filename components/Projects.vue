@@ -15,8 +15,9 @@ export type projectDTO = {
 const projectsList: Array<projectDTO> = [{
     title: "Vulcan Novels",
     started: "03/03/2024",
-    description: "Um site dedicado a leitura de novels(Novelas traduzido para o Português) autorais para a Vulcan Scanlator.",
+    description: "Um site dedicado a leitura de novels(Novelas traduzido para o Português) autorais para a Vulcan Scanlator. Tem sua prototipagem feita no Figma e está sendo desenvolvido usando principalmente Vite, Vue e Tailwind no front-end.",
     status: "in progress",
+    image: "/assets/images/projects/vulcan-novels.webp",
     tecnologies: [{
         title: "Vue",
         icon: "uil:vuejs"
@@ -41,8 +42,9 @@ const projectsList: Array<projectDTO> = [{
     started: "08/03/2024",
     finished: "10/03/2024",
     github: "https://github.com/devdouglasgfs/portfolio",
+    image: "/assets/images/projects/portfolio.png",
     deployUrl: "https://devdouglassilva.xyz",
-    description: "Meu portfólio pessoal para exibir meus projetos, habilidades e informações sobre mim.",
+    description: "Meu portfólio pessoal foi desenvolvido com Nuxt, Vue e Tailwind e tem sua prototipagem no Figma, tem o propósito de exibir meus projetos, habilidades e informações sobre mim.",
     status: "done",
     tecnologies: [{
         title: "Vue",

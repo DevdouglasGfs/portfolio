@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { plataformsForConnection } from './MoreQuestions.vue';
+import { platformsForConnection } from './MoreQuestions.vue';
 
-const plataforms = plataformsForConnection.concat([{
+const platforms = platformsForConnection.concat([{
     title: "Github",
     to: "https://github.com/devdouglasgfs/",
     icon: "uil:github",
@@ -20,7 +20,7 @@ const plataforms = plataformsForConnection.concat([{
                 <h6 class="text-base lg:text-md font-bold capitalize">Minhas plataformas</h6>
                 <nav class="self-stretch">
                     <ul class="flex flex-wrap gap-3">
-                        <li v-for="plataform in plataforms" class="self-stretch">
+                        <li v-for="plataform in platforms" class="self-stretch">
                             <NuxtLink class="rounded-xl size-max" :to="plataform.to">
                                 <Card tabindex="-1" :icon="plataform.icon" class="p-6 rounded-xl !flex-row *:!text-ntl-0" />
                                 <span class="sr-only">Fale comigo pelo {{ plataform.title }}</span>
