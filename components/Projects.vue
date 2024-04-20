@@ -42,7 +42,7 @@ const projectsList: Array<projectDTO> = [{
     started: "08/03/2024",
     finished: "10/03/2024",
     github: "https://github.com/devdouglasgfs/portfolio",
-    image: "/assets/images/projects/portfolio.png"
+    image: "/assets/images/projects/portfolio.png",
     deployUrl: "https://devdouglassilva.xyz",
     description: "Meu portfólio pessoal foi desenvolvido com Nuxt, Vue e Tailwind e tem sua prototipagem no Figma, tem o propósito de exibir meus projetos, habilidades e informações sobre mim.",
     status: "done",
