@@ -19,6 +19,11 @@ export const plataformsForConnection: Array<cardProps & { to: string }> = [{
     icon: "mdi:discord",
     iconLg: true,
     to: "https://discord.com/invite/AcWteDjNsh"
+},{
+    title: "Behance",
+    icon: "mdi:behance",
+    iconLg: true,
+    to: "https://www.behance.net/devdouglassilva"
 }]
 </script>
 <script setup lang="ts">
