@@ -1,5 +1,5 @@
 <script lang="ts">
-export const plataformsForConnection: Array<cardProps & { to: string }> = [{
+export const platformsForConnection: Array<cardProps & { to: string }> = [{
     title: "instagram",
     icon: "uil:instagram",
     iconLg: true,
@@ -69,7 +69,7 @@ watch(sectionVisible, (v) => {
                 <Icon name="uil:smile-wink" />
             </p>
             <ul class="flex max-md:landscape:justify-center flex-wrap gap-2">
-                <li class="self-stretch flex-auto basis-1/3" v-for="plataform in plataformsForConnection"
+                <li class="self-stretch flex-auto basis-1/3" v-for="plataform in platformsForConnection"
                     :key="plataform.to">
                     <NuxtLink class="size-full rounded-sd" :to="plataform.to" target="_blank">
                         <span class="sr-only">Fale comigo no {{ plataform.title }}</span>
