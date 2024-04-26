@@ -22,8 +22,8 @@ const projectsList: Array<projectDTO> = [{
         title: "Vue",
         icon: "uil:vuejs"
     }, {
-        title: "Nuxtjs",
-        icon: "mdi:nuxt"
+        title: "Vite",
+        icon: "simple-icons:vite"
     }, {
         title: "TypeScript",
         icon: "mdi:language-typescript"
