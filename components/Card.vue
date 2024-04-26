@@ -1,10 +1,10 @@
 <script setup lang="ts">
-export type cardProps = {
+export type CardProps = {
     title?: string;
     icon?: string;
     iconLg?: boolean;
 }
-defineProps<cardProps>();
+defineProps<CardProps>();
 </script>
 <template>
     <button

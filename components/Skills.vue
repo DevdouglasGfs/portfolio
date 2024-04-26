@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { cardProps } from './Card.vue';
+import type { CardProps } from './Card.vue';
 
-const softSkills: Array<cardProps> = [{
+const softSkills: Array<CardProps> = [{
     title: "Autodidata",
     icon: "uil:book-reader"
 }, {

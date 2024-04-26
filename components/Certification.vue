@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { certificationDTO } from './Certifications.vue';
+import type { CertificationDTO } from './Certifications.vue';
 
-defineProps<certificationDTO>();
+defineProps<CertificationDTO>();
 </script>
 <template>
     <article class="flex flex-col w-full md:landscape:grid md:landscape:grid-cols-2 gap-6 lg:gap-16">

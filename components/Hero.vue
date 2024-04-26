@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { cardProps } from './Card.vue';
+import type { CardProps } from './Card.vue';
 
-const topics: Array<cardProps & { to: string }> = [{
+const topics: Array<CardProps & { to: string }> = [{
     title: "Quem sou eu",
     to: "#who-i-am",
     icon: "uil:question-circle"

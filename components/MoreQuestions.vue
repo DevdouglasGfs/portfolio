@@ -1,5 +1,6 @@
 <script lang="ts">
-export const platformsForConnection: Array<cardProps & { to: string }> = [{
+import type { CardProps } from './Card.vue';
+export const platformsForConnection: Array<CardProps & { to: string }> = [{
     title: "instagram",
     icon: "uil:instagram",
     iconLg: true,
@@ -27,9 +28,6 @@ export const platformsForConnection: Array<cardProps & { to: string }> = [{
 }]
 </script>
 <script setup lang="ts">
-import type { cardProps } from './Card.vue';
-
-
 const section = ref<HTMLElement>();
 const triggered = ref(false);
 const runned = ref(false);

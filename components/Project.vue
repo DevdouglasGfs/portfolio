@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { projectDTO } from './Projects.vue';
+import type { ProjectDTO } from './Projects.vue';
 
-defineProps<projectDTO>();
+defineProps<ProjectDTO>();
 
 const showTechnicalDetails = ref(false);
 const toggleDetails = useToggle(showTechnicalDetails);
@@ -71,9 +71,18 @@ const toggleDetails = useToggle(showTechnicalDetails);
                     <h5 class="text-md lg:text-lg capitalize leading-normal">Descrição</h5>
                     <div class="flex flex-col gap-2">
                         <p class="text-base lg:text-md tracking-wide leading-relaxed">{{ description }}</p>
+                        <div class="flex items-center gap-3">
                         <NuxtLink v-if="github" :to="github" target="_blank"
-                            class="inline-flex item-center justify-center text-base lg:text-md font-bold leading-tight px-6 pt-3 pb-1 rounded-sd button ring-1 ring-primary-300 transition-colors duration-300 ease-in hover:bg-gradient-to-b hover:active:bg-primary-600 tracking-wide focus:outline-secundary-200 focus:outline">
-                            Visitar o Github do projeto</NuxtLink>
+                            class="inline-flex item-center gap-3 justify-center text-base lg:text-md font-medium leading-tight px-6 pt-3 pb-1 rounded-sd button bg-ntl-800 transition-colors duration-300 ease-in hover:bg-gradient-to-b hover:active:bg-primary-600 tracking-wide focus:outline-secundary-200 focus:outline">
+                            <Icon class="text-ntl-0 text-lg" name="uil:github" />
+                            Visitar o github do projeto</NuxtLink>
+                            <NuxtLink :to="deployUrl"
+                    class="inline-flex items-center button justify-center gap-3 font-medium p-3 rounded-xl ltransition-colors max-lg:duration-200 duration-100 ease-in hover:active:bg-secundary-500"
+                    :class="{ '!bg-ntl-x700 !text-ntl-100': !deployUrl }">
+                    Visitar
+                    <Icon class="text-lg text-current" name="radix-icons:open-in-new-window" />
+                </NuxtLink>
+                        </div>	
                     </div>
                 </div>
             </div>
