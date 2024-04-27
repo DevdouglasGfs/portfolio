@@ -41,7 +41,8 @@ const topics: Array<CardProps & { to: string }> = [{
                 </filter>
             </defs>
         </svg>
-        <div class="relative col-span-2 max-lg:md:landscape:col-span-4 lg:col-span-3 p-6 flex flex-col gap-3 justify-between h-full">
+        <div
+            class="relative col-span-2 max-lg:md:landscape:col-span-4 lg:col-span-3 p-6 flex flex-col gap-3 justify-between h-full">
             <svg class="max-lg:hidden absolute z-0 isolate top-0 right-0" width="350" height="430" viewBox="0 0 350 430"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_d_31_41)">
@@ -90,8 +91,8 @@ const topics: Array<CardProps & { to: string }> = [{
             </div>
             <div class="flex items-center gap-2 self-stretch">
                 <NuxtLink to="https://wa.me/+55038999392757" target="_blank"
-                    class="button font-semibold transition-colors ease-in-out duration-200 lg:duration-300 tracking-wide bg-gradient-to-r from-secundary-600 to-secundary-700 hover:active:from-secundary-700 hover:active:to-secundary-800">
-                    <span class="sr-only">Accessar o meu whatspp</span>
+                    class="button font-medium transition-colors ease-in-out duration-200 lg:duration-300 tracking-wide bg-gradient-to-r from-secundary-600 to-secundary-700 hover:active:from-secundary-700 hover:active:to-secundary-800">
+                    <span class="sr-only">Mandar mensagem no whatspp</span>
                     Contrate-Me!
                 </NuxtLink>
                 <NuxtLink to="https://github.com/DevDouglasGfs"
