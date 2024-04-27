@@ -42,10 +42,4 @@ p a {
     &::-webkit-scrollbar {
         display: none;
     }
-
-    /* for Firefox */
-    &::-webkit-scrollbar {
-        display: none;
-        /* for Chrome, Safari, and Opera */
-    }
 }
