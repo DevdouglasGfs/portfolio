@@ -65,8 +65,8 @@ const changeActiveElement = (el: 'soft' | 'hard') => {
                             leave-from-class="opacity-100" leave-to-class="opacity-0">
                             <ul v-show="showSoftSkills"
                                 class="flex flex-wrap gap-3 max-h-60 overflow-y-auto snap-y snap-mandatory p-1 hide-scrollbar rounded-xl ring-1 ring-ntl-700">
-                                <li class="flex-auto basis-3/12 snap-center snap-always" v-for="skill in skills?.soft">
-                                    <Card tabindex="-1" class="size-full" :title="skill.title" :icon="skill.icon" />
+                                <li class="flex-initial min-w-max basis-3/12 snap-center snap-always" v-for="skill in skills?.soft">
+                                    <Card type="compact" tabindex="-1" class="size-full" :title="skill.title" :icon="skill.icon" />
                                 </li>
                             </ul>
                         </Transition>
@@ -76,13 +76,13 @@ const changeActiveElement = (el: 'soft' | 'hard') => {
                 </div>
                 <!-- hard -->
                 <div class="self-stretch w-full flex flex-col gap-3 md:landscape:col-span-1">
-                    <h3 class="text-lg lg:text-2xl font-bold leading-tight capitalize">Hard skills</h3>
+                    <h3 class="text-md lg:text-2xl font-bold leading-tight capitalize">Hard skills</h3>
                     <div role="group" class="self-stretch">
                         <div tabindex="0"
                             class="flex self-stretch items-center justify-between border-b border-ntl-200/50 gap-3 py-1"
                             @click="changeActiveElement('hard')" @keyup.enter.exact="changeActiveElement('hard')">
-                            <h4 class="text-md lg:text-lg mt-2 font-bold leading-tight capitalize">
-                                Linguagens, frameworks e ferramentas
+                            <h4 class="text-md lg:text-lg mt-2 font-semibold leading-tight">
+                                Linguagens, Frameworks e Ferramentas
                             </h4>
                             <Icon class="text-lg text-ntl-100" v-if="showHardSkills" name="uil:angle-up" />
                             <Icon class="text-lg text-ntl-100" v-else name="uil:angle-down" />
@@ -96,7 +96,7 @@ const changeActiveElement = (el: 'soft' | 'hard') => {
                                 class="self-stretch flex flex-wrap items-center gap-3 w-full max-h-60 overflow-y-auto snap-y snap-mandatory p-1 hide-scrollbar rounded-xl ring-1 ring-ntl-700">
                                 <li class="flex-initial basis-3/12 snap-center w-full" v-for="skill in skills?.hard">
                                     <Card class="size-full" tabindex="-1" :title="skill.title" :icon="skill.icon"
-                                        type="tech" :icon-lg="true" />
+                                        type="compact" />
                                 </li>
                             </ul>
                         </Transition>
