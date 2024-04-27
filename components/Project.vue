@@ -7,7 +7,7 @@ const showTechnicalDetails = ref(true);
 const toggleDetails = useToggle(showTechnicalDetails);
 </script>
 <template>
-    <article class="flex flex-col w-full md:landscape:grid md:landscape:grid-cols-2 gap-6 lg:gap-16 group">
+    <article class="flex flex-col w-full max-w-full md:landscape:grid md:landscape:grid-cols-2 gap-6 lg:gap-16 group">
         <div class="flex flex-col self-stretch gap-3 md:landscape:col-span-1">
             <div class="flex flex-wrap items-center gap-1 justify-between self-stretch">
                 <h3 class="text-lg lg:text-2xl capitalize font-bold leading-normal">
@@ -44,10 +44,10 @@ const toggleDetails = useToggle(showTechnicalDetails);
                 </div>
             </div>
         </div>
-        <div class="flex flex-col self-stretch gap-3 md:landscape:col-span-1">
+        <div class="flex flex-col self-stretch gap-3 md:landscape:col-span-1 w-full">
             <h4 class="text-lg lg:text-2xl font-bold leading-normal">Detalhes</h4>
             <div class="flex flex-col gap-3 w-full">
-                <div class="flex self-stretch flex-col pb-3 gap-2">
+                <div class="flex self-stretch flex-col pb-3 gap-2 w-full">
                     <div tabindex="0"
                         class="flex self-stretch items-center justify-between border-b border-ntl-200/50 gap-3 py-1"
                         @click="toggleDetails()" @keyup.enter.exact="toggleDetails()">
@@ -62,8 +62,8 @@ const toggleDetails = useToggle(showTechnicalDetails);
                         leave-active-class="transition-opacity duration-500 ease-in-out" leave-from-class="opacity-100"
                         leave-to-class="opacity-0">
                         <ul v-show="showTechnicalDetails"
-                            class="self-stretch flex items-center gap-3 w-max max-w-full max-h-60 overflow-y-scroll snap-x snap-mandatory p-1 hide-scrollbar rounded-xl">
-                            <li class="flex min-w-max grow basis-3/12 snap-center" v-for="skill in tecnologies"
+                            class="w-full flex flex-wrap max-w-full items-center gap-3 max-h-60 snap-mandatory p-1 hide-scrollbar rounded-xl">
+                            <li class="flex w-max basis-3/12 snap-center" v-for="skill in tecnologies"
                                 :key="skill.icon">
                                 <Card tabindex="-1" :title="skill.title" :icon="skill.icon" type="compact" />
                             </li>
