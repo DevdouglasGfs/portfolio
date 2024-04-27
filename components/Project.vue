@@ -93,12 +93,12 @@ const toggleDetails = useToggle(showTechnicalDetails);
                             </p>
                             <div class="flex items-center gap-3">
                                 <NuxtLink v-if="github" :to="github" target="_blank"
-                                    class="inline-flex gap-3 justify-center items-center text-base lg:text-md font-medium px-6 pt-2 pb-[2px] rounded-sd bg-gradient-to-r from-secundary-400/80 to-secundary-500 backdrop-blur-md transition-colors duration-300 ease-in">
+                                    class="inline-flex grow gap-3 justify-center items-center text-base lg:text-md font-medium px-6 pt-2 pb-[2px] rounded-sd bg-gradient-to-r from-secundary-400/80 to-secundary-500 hover:outline hover:outline-secundary-400 backdrop-blur-md transition-[outline] duration-300 ease-in">
                                     <Icon class="!text-secundary-100 mb-1 text-lg" name="uil:github" />
                                     Github do projeto
                                 </NuxtLink>
                                 <NuxtLink :to="deployUrl" v-if="deployUrl"
-                                    class="inline-flex gap-3 justify-evenly items-center text-base lg:text-md font-medium hover:!text-ntl-0 px-6 pt-2 pb-[2px] rounded-sd transition-colors duration-300 ease-in">
+                                    class="inline-flex grow gap-3 justify-evenly items-center text-base lg:text-md font-medium hover:text-ntl-0 hover:outline hover:outline-secundary-400 transition-[outline] duration-300 ease-in px-6 pt-2 pb-[2px] rounded-sd">
                                     Visitar
                                     <Icon class="text-ntl-100 mb-1 text-lg" name="radix-icons:open-in-new-window" />
                                 </NuxtLink>
