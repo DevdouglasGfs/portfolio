@@ -53,9 +53,7 @@ watch(sectionVisible, (v) => {
             <h2 class="title">Meus projetos</h2>
             <ul class="flex relative flex-col gap-16 self-stretch">
                 <li v-for="project in projectsList" class="w-full">
-                    <Project :status="project.status" :title="project.title" :started="project.started"
-                        :description="project.description" :finished="project.finished" :github="project.github"
-                        :image="project.image" :tecnologies="project.tecnologies" :deploy-url="project.deployUrl" />
+                    <Project v-bind="project" />
                 </li>
             </ul>
         </div>
