@@ -15,7 +15,6 @@ export type ProjectDTO = {
 
 const projectsList: Ref<Array<ProjectDTO> | null> = useFetch<Array<ProjectDTO>>('/api/projects').data;
 
-
 const section = ref<HTMLElement>()
 const triggered = ref(false);
 const sectionVisible = useElementVisibility(section);
