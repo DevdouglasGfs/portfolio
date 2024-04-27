@@ -65,7 +65,7 @@ const toggleDetails = useToggle(showTechnicalDetails);
                             class="self-stretch flex items-center gap-3 w-max max-w-full max-h-60 overflow-y-scroll snap-x snap-mandatory p-1 hide-scrollbar rounded-xl">
                             <li class="flex min-w-max grow basis-3/12 snap-center" v-for="skill in tecnologies"
                                 :key="skill.icon">
-                                <Card tabindex="-1" :title="skill.title" :icon="skill.icon" type="tech" />
+                                <Card tabindex="-1" :title="skill.title" :icon="skill.icon" type="compact" />
                             </li>
                         </ul>
                     </Transition>
