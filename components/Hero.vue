@@ -77,7 +77,7 @@ const topics: Array<CardProps & { to: string }> = [{
                                 Silva</span>
                         </div>
                     </hgroup>
-                    <p class="text-base tracking-wide max-w-prose leading-tight lg:text-md">Olá, seja bem-vindo(a) ao
+                    <p class="text-base tracking-wide max-w-prose leading-loose lg:text-md">Olá, seja bem-vindo(a) ao
                         meu portfólio.<br /><br />
                         Separei alguns tópicos para você conhecer a mim, o meu trabalho e minhas qualificações para
                         estar atuando na área e na sua empresa</p>
