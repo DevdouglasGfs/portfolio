@@ -4,7 +4,7 @@ export const platformsForConnection: Array<CardProps & { to: string }> = [{
     title: "instagram",
     icon: "uil:instagram",
     iconLg: true,
-    to: "https://www.instagram.com/fullstack_douglas_silva?igsh=Z3JlbW9lcWhjcW9t",
+    to: "https://www.instagram.com/fullstack_douglas_silva",
 }, {
     title: "Whatsapp",
     icon: "uil:whatsapp",
@@ -61,7 +61,7 @@ watch(sectionVisible, (v) => {
         </svg>
         <div class="flex flex-col gap-2 md:landscape:col-span-1">
             <h2 class="title">Quer saber de mais coisas?</h2>
-            <p class="text-base lg:text-md max-w-prose leading-relaxed">Você pode entrar em contato comigo por alguma das
+            <p class="text-ntl-50 text-base lg:text-md max-w-prose leading-loose">Você pode entrar em contato comigo por alguma das
                 minhas redes
                 sociais e plataformas e sentir-se livre para que eu sane suas dúvidas! Vou responder assim que possível
                 <Icon name="uil:smile-wink" />
@@ -78,7 +78,7 @@ watch(sectionVisible, (v) => {
             </ul>
         </div>
         <NuxtImg
-            class="self-stretch size-full object-scale-down md:landscape:col-span-1 h-[300px] lg:h-[400px] transition-transform translate-x-full duration-[1500ms] ease-in w-full"
+            class="self-stretch size-full bg-transparent object-scale-down md:landscape:col-span-1 h-[300px] lg:h-[400px] transition-transform translate-x-full duration-[1500ms] ease-in w-full"
             :class="{ '!translate-x-0': sectionVisible || triggered }" src="/assets/images/characters/runner.png" alt=""
             placeholder />
     </section>
