@@ -1,74 +1,7 @@
 <script setup lang="ts">
 import type { CardProps } from './Card.vue';
 
-const softSkills: Array<CardProps> = [{
-    title: "Autodidata",
-    icon: "uil:book-reader"
-}, {
-    title: "Resiliente",
-    icon: "mdi:timer-alert-outline"
-}, {
-    title: "Adaptativo",
-    icon: "uil:exclamation-circle"
-}, {
-    title: "Determinado",
-    icon: "mdi:package-variant-closed"
-}, {
-    title: "Adepto a opiniões",
-    icon: "mdi:smiley-wink-outline"
-}, {
-    title: "Criativo",
-    icon: "mdi:palette-outline"
-}, {
-    title: "Proativo",
-    icon: "mdi:hand-wave-outline"
-}, {
-    title: "Trabalho em equipe",
-    icon: "fluent:people-team-16-regular"
-}, {
-    title: "Perseverante",
-    icon: "tabler:user-code"
-}]
-
-const hardSkills: Array<cardProps> = [{
-    title: "Vue",
-    icon: "uil:vuejs"
-}, {
-    title: "Nuxt",
-    icon: "mdi:nuxt"
-}, {
-    title: "Vite",
-    icon: "file-icons:vite"
-}, {
-    title: "Vitest",
-    icon: "simple-icons:vitest"
-}, {
-    title: "JavaScript",
-    icon: "mdi:language-javascript"
-}, {
-    title: "TypeScript",
-    icon: "mdi:language-typescript"
-}, {
-    title: "Figma",
-    icon: "fa-brands:figma"
-},
-{
-    title: "Sass",
-    icon: "mdi:sass"
-}, {
-    title: "Git",
-    icon: "mdi:git"
-}, {
-    title: "CSS",
-    icon: "mdi:language-css3"
-}, {
-    title: "HTML",
-    icon: "mdi:language-html5"
-}, {
-    title: "Tailwind",
-    icon: "mdi:tailwind"
-}]
-
+const skills: Ref<{ soft: Array<CardProps>, hard: Array<CardProps> } | null> = useFetch<{ soft: Array<CardProps>, hard: Array<CardProps> }>('/api/skills').data
 const showSoftSkills = ref(true);
 const showHardSkills = ref(false);
 
@@ -91,8 +24,8 @@ const changeActiveElement = (el: 'soft' | 'hard') => {
         <div class="size-max">
             <Icon class="title text-primary-500" name="mdi:briefcase-outline" />
         </div>
-        <svg class="max-lg:block absolute -z-10 isolate top-0 left-0 max-w-full overflow-x-hidden" width="650" height="600"
-            viewBox="0 0 650 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="max-lg:block absolute -z-10 isolate top-0 left-0 max-w-full overflow-x-hidden" width="650"
+            height="600" viewBox="0 0 650 300" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_31_41)">
                 <rect width="100" height="100" transform="translate(100 50)" fill="#030611" fill-opacity="0.01" />
             </g>
@@ -116,23 +49,23 @@ const changeActiveElement = (el: 'soft' | 'hard') => {
                 <!-- soft -->
                 <div class="flex flex-col gap-3 flex-auto md:landscape:col-span-1 md:landscape:min-w-1/2">
                     <div role="group" class="self-stretch">
-                        <div tabindex="0" class="flex self-stretch items-center gap-3 py-1"
+                        <div tabindex="0"
+                            class="flex self-stretch items-center justify-between border-b border-ntl-200/50 gap-3 py-1"
                             @click="changeActiveElement('soft')" @keyup.enter.exact="changeActiveElement('soft')">
                             <h3 class="text-md lg:text-lg mt-2 font-bold leading-tight capitalize">Soft skills</h3>
                             <div class="p-1 flex">
-                                <Icon class="text-lg text-ntl-100" v-if="showSoftSkills"
-                                    name="mdi:arrow-collapse-vertical" />
-                                <Icon class="text-lg text-ntl-100" v-else name="mdi:arrow-expand-vertical" />
+                                <Icon class="text-lg text-ntl-100" v-if="showSoftSkills" name="uil:angle-up" />
+                                <Icon class="text-lg text-ntl-100" v-else name="uil:angle-down" />
                                 <span class="sr-only">Expandir lista de soft skills</span>
                             </div>
                         </div>
                         <Transition enter-active-class="transition-opacity duration-500 ease-in-out overflow-hidden"
                             enter-from-class="opacity-0" enter-to-class="opacity-100"
-                            leave-active-class="transition-opacity duration-500 ease-in-out" leave-from-class="opacity-100"
-                            leave-to-class="opacity-0">
+                            leave-active-class="transition-opacity duration-500 ease-in-out"
+                            leave-from-class="opacity-100" leave-to-class="opacity-0">
                             <ul v-show="showSoftSkills"
-                                class="flex flex-wrap gap-3 max-h-60 overflow-y-scroll snap-y snap-mandatory p-1 hidden-scrollbar rounded-xl ring-1 ring-ntl-700">
-                                <li class="flex-auto basis-3/12 snap-center snap-always" v-for="skill in softSkills">
+                                class="flex flex-wrap gap-3 max-h-60 overflow-y-auto snap-y snap-mandatory p-1 hide-scrollbar rounded-xl ring-1 ring-ntl-700">
+                                <li class="flex-auto basis-3/12 snap-center snap-always" v-for="skill in skills?.soft">
                                     <Card tabindex="-1" class="size-full" :title="skill.title" :icon="skill.icon" />
                                 </li>
                             </ul>
@@ -145,24 +78,25 @@ const changeActiveElement = (el: 'soft' | 'hard') => {
                 <div class="self-stretch w-full flex flex-col gap-3 md:landscape:col-span-1">
                     <h3 class="text-lg lg:text-2xl font-bold leading-tight capitalize">Hard skills</h3>
                     <div role="group" class="self-stretch">
-                        <div tabindex="0" class="flex self-stretch items-center gap-3 py-1"
+                        <div tabindex="0"
+                            class="flex self-stretch items-center justify-between border-b border-ntl-200/50 gap-3 py-1"
                             @click="changeActiveElement('hard')" @keyup.enter.exact="changeActiveElement('hard')">
                             <h4 class="text-md lg:text-lg mt-2 font-bold leading-tight capitalize">
                                 Linguagens, frameworks e ferramentas
                             </h4>
-                            <Icon class="text-lg text-ntl-100" v-if="showHardSkills" name="mdi:arrow-collapse-vertical" />
-                            <Icon class="text-lg text-ntl-100" v-else name="mdi:arrow-expand-vertical" />
+                            <Icon class="text-lg text-ntl-100" v-if="showHardSkills" name="uil:angle-up" />
+                            <Icon class="text-lg text-ntl-100" v-else name="uil:angle-down" />
                             <span class="sr-only">Expandir lista de hard skills</span>
                         </div>
                         <Transition enter-active-class="transition-opacity duration-500 ease-in-out overflow-hidden"
                             enter-from-class="opacity-0" enter-to-class="opacity-100"
-                            leave-active-class="transition-opacity duration-500 ease-in-out" leave-from-class="opacity-100"
-                            leave-to-class="opacity-0">
+                            leave-active-class="transition-opacity duration-500 ease-in-out"
+                            leave-from-class="opacity-100" leave-to-class="opacity-0">
                             <ul v-show="showHardSkills"
-                                class="self-stretch flex flex-wrap items-center gap-3 w-full max-h-60 overflow-y-scroll snap-y snap-mandatory p-1 hidden-scrollbar rounded-xl ring-1 ring-ntl-700">
-                                <li class="flex-auto basis-3/12 snap-always snap-center w-full" v-for="skill in hardSkills">
-                                    <Card tabindex="-1" :title="skill.title" :icon="skill.icon" :icon-lg="true"
-                                        class="p-3 md:landscape:p-6 rounded-xl text-base lg:text-md flex flex-col items-center gap-2 min-w-16 md:landscape:min-w-28 w-full" />
+                                class="self-stretch flex flex-wrap items-center gap-3 w-full max-h-60 overflow-y-auto snap-y snap-mandatory p-1 hide-scrollbar rounded-xl ring-1 ring-ntl-700">
+                                <li class="flex-initial basis-3/12 snap-center w-full" v-for="skill in skills?.hard">
+                                    <Card class="size-full" tabindex="-1" :title="skill.title" :icon="skill.icon"
+                                        type="tech" :icon-lg="true" />
                                 </li>
                             </ul>
                         </Transition>
