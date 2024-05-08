@@ -11,6 +11,7 @@
   # search for the extension on https://open-vsx.org/ and use "publisher.id"
   idx.extensions = [
     "antfu.iconify"
+    "Vue.volar"
   ];
   # preview configuration, identical to monospace.json
   idx.previews = { };

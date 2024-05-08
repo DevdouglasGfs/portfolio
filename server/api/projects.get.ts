@@ -7,7 +7,7 @@ const projectsList: Array<ProjectDTO> = [
     description:
       "Um site dedicado a leitura de novels(Novelas traduzido para o Português) autorais para a Vulcan Scanlator. Tem sua prototipagem feita no Figma e está sendo desenvolvido usando principalmente Vite, Vue e Tailwind no front-end.",
     status: "in progress",
-    image: "/assets/images/projects/vulcan-novels.webp",
+    image: "/assets/images/projects/vulcan-novels.png",
     tecnologies: [
       {
         title: "Vue",
