@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss"
 
 export default {
   content: [],
@@ -6,10 +6,11 @@ export default {
     fontFamily: {
       primary: "Krona One",
       secundary: "Manjari",
-      ternary: "Julius Sans One"
+      ternary: "Julius Sans One",
     },
     colors: {
-      "transparent": "transparent",
+      transparent: "transparent",
+      current: "current",
 
       "ntl-0": "#fff",
       "ntl-10": "#fafafa",
@@ -31,7 +32,6 @@ export default {
       "ntl-800": "#10121D",
       "ntl-900": "#030611",
 
-
       "primary-50": "#E8F5FF",
       "primary-100": "#B6E1FD",
       "primary-200": "#93D2FD",
@@ -42,7 +42,6 @@ export default {
       "primary-700": "#0E70B2",
       "primary-800": "#0B578A",
       "primary-900": "#0B4269",
-
 
       "secundary-50": "#F3F1FF",
       "secundary-100": "#EAE5FF",
@@ -57,19 +56,19 @@ export default {
       "secundary-950": "#260075",
     },
     fontSize: {
-      "xsm": "10px",
-      "sm": "13px",
-      "base": "16px",
-      "md": "20px",
-      "lg": "25px",
+      xsm: "10px",
+      sm: "13px",
+      base: "16px",
+      md: "20px",
+      lg: "25px",
       "2xl": "32px",
       "3xl": "39px",
       "4xl": "42px",
-      "5xl": "61px"
+      "5xl": "61px",
     },
     extend: {
       borderRadius: {
-        sd: "8px"
+        sd: "8px",
       },
     },
   },

@@ -1,4 +1,4 @@
-import { CardProps } from "~/components/Card.vue";
+import type { CardProps } from "~/components/common/card-info.vue"
 
 const softSkills: Array<CardProps> = [
   {
@@ -37,7 +37,7 @@ const softSkills: Array<CardProps> = [
     title: "Perseverante",
     icon: "tabler:user-code",
   },
-];
+]
 const hardSkills: Array<CardProps> = [
   {
     title: "Vue",
@@ -46,6 +46,10 @@ const hardSkills: Array<CardProps> = [
   {
     title: "React",
     icon: "uil:react",
+  },
+  {
+    title: "Next",
+    icon: "simple-icons:nextdotjs",
   },
   {
     title: "Nuxt",
@@ -91,8 +95,7 @@ const hardSkills: Array<CardProps> = [
     title: "Tailwind",
     icon: "mdi:tailwind",
   },
-];
-
-export default defineEventHandler((event) => {
-  return { soft: softSkills, hard: hardSkills };
-});
+]
+export default defineEventHandler(() => {
+  return { soft: softSkills, hard: hardSkills }
+})
