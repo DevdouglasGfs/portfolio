@@ -2,34 +2,36 @@
 export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
-  css: ['~/assets/css/tailwind.css'],
+  css: ["~/assets/css/tailwind.css"],
   modules: [
-    '@nuxt/image',
-    '@vueuse/nuxt',
-    '@nuxtjs/tailwindcss',
-    'nuxt-icon',
-    '@nuxtjs/google-fonts',
-    '@nuxtjs/seo',
-    '@nuxt/eslint',
+    "@nuxt/image",
+    "@vueuse/nuxt",
+    "@nuxtjs/tailwindcss",
+    "nuxt-icon",
+    "@nuxtjs/google-fonts",
+    "@nuxtjs/seo",
+    "@nuxt/eslint",
   ],
   eslint: {
     config: {
-      typescript: { strict: true },
+      typescript: {
+        strict: true,
+      },
     },
   },
   googleFonts: {
     families: {
-      'Krona One': true,
-      'Julius Sans One': true,
+      "Krona One": true,
+      "Julius Sans One": true,
       Manjari: true,
     },
   },
   image: {
-    format: ['avif', 'webp', 'png', 'jpg'],
+    format: ["avif", "webp", "png", "jpg"],
   },
   router: {
     options: {
-      scrollBehaviorType: 'smooth',
+      scrollBehaviorType: "smooth",
     },
   },
   ogImage: { enabled: false },

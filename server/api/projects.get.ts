@@ -1,4 +1,4 @@
-import { ProjectDTO } from "~/components/Projects.vue";
+import type { ProjectDTO } from "~/components/projects-section.vue"
 
 const projectsList: Array<ProjectDTO> = [
   {
@@ -41,8 +41,7 @@ const projectsList: Array<ProjectDTO> = [
     github: "https://github.com/devdouglasgfs/whyapp-frontend",
     image: "/assets/images/projects/whyapp.png",
     deployUrl: "https://whyapp.onrender.com/login",
-    description:
-      "WhyApp é um aplicativo de bate-papo projetado para facilitar a comunicação entre os usuários.",
+    description: "WhyApp é um aplicativo de bate-papo projetado para facilitar a comunicação entre os usuários.",
     status: "in progress",
     tecnologies: [
       {
@@ -103,8 +102,7 @@ const projectsList: Array<ProjectDTO> = [
     github: "https://github.com/devdouglasgfs/taxas-atuais",
     deployUrl: "https://taxasatuais.devdouglassilva.xyz",
     image: "/assets/images/projects/taxas-atuais.png",
-    description:
-      "Uma aplicação para fazer consultas sobre o valor atual das taxas usando a API do BrasilAPI.",
+    description: "Uma aplicação para fazer consultas sobre o valor atual das taxas usando a API do BrasilAPI.",
     status: "done",
     tecnologies: [
       {
@@ -129,8 +127,8 @@ const projectsList: Array<ProjectDTO> = [
       },
     ],
   },
-];
+]
 
-export default defineEventHandler((event) => {
-  return projectsList;
-});
+export default defineEventHandler(() => {
+  return projectsList
+})
