@@ -5,13 +5,5 @@
   "semi": false,
   "singleQuote": false,
   "singleAttributePerLine": true,
-  "bracketSameLine": true,
-  "overrides": [
-    {
-      "files": ["**/**/.vue"],
-      "options": {
-        "vueIndentScriptAndStyle": true
-      }
-    }
-  ]
+  "bracketSameLine": true
 }
