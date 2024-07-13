@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "pretty": "prettier --write \"./**/*.{js,ts,json,vue}\""
   },
   "dependencies": {
     "@nuxt/image": "^1.4.0",
