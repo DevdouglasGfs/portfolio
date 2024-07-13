@@ -1,0 +1,16 @@
+{
+  "tabWidth": 2,
+  "useTabs": false,
+  "printWidth": 120,
+  "semi": false,
+  "singleQuote": true,
+  "bracketSameLine": true,
+  "overrides": [
+    {
+      "files": ["**/**/.vue"],
+      "options": {
+        "vueIndentScriptAndStyle": true
+      }
+    }
+  ]
+}
