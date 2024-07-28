@@ -10,7 +10,7 @@
 
 @layer components {
     .button {
-        @apply px-6 pt-4 pb-2 rounded-sd capitalize text-base lg:text-md leading-tight
+        @apply px-6 pt-4 pb-2 rounded-sd capitalize text-base lg:text-md leading-tight cursor-pointer
     }
 
     .portfolio-section {

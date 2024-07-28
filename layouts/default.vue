@@ -1,4 +1,6 @@
 <template>
-    <slot></slot>
-    <Footer />
+  <div class="supports-[contents]:contents">
+    <slot />
+    <footer-section />
+  </div>
 </template>

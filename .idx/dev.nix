@@ -12,6 +12,10 @@
   idx.extensions = [
     "antfu.iconify"
     "Vue.volar"
+    "bradlc.vscode-tailwindcss"
+    "mhutchie.git-graph"
+    "dbaeumer.vscode-eslint"
+    "esbenp.prettier-vscode"
   ];
   # preview configuration, identical to monospace.json
   idx.previews = { };
