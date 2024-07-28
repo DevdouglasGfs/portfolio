@@ -3,7 +3,7 @@ import type { CardProps } from "./common/card-info.vue"
 
 export type ProjectDTO = {
   title: string
-  status: "done" | "in progress" | "paused"
+  status: string
   started: Date | string
   finished?: Date | string
   description: string
