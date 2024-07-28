@@ -90,7 +90,7 @@ const toggleDetails = useToggle(showTechnicalDetails)
           <p class="text-base uppercase font-primary font-normal tracking-wide">
             Status:
             <span class="text-primary-200 font-secundary font-normal first-letter:capitalize normal-case">
-              {{ status === "done" ? "Finalizado" : status === "in progress" ? "Em progresso" : "Pausado" }}
+              {{ status }}
             </span>
           </p>
           <div class="flex flex-col gap-1">
