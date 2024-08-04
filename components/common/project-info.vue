@@ -7,13 +7,13 @@ const showTechnicalDetails = ref(true)
 const toggleDetails = useToggle(showTechnicalDetails)
 </script>
 <template>
-  <article class="flex flex-col w-full max-w-full md:landscape:grid md:landscape:grid-cols-2 gap-6 lg:gap-16 group">
+  <article class="flex flex-col w-full max-w-full md:landscape:grid lg:grid md:landscape:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-16 group">
     <div class="flex flex-col self-stretch gap-3 md:landscape:col-span-1">
       <div class="flex flex-wrap items-center gap-1 justify-between self-stretch">
-        <h3 class="text-lg lg:text-2xl capitalize font-bold leading-normal">
+        <h3 class="text-md lg:text-2xl capitalize font-bold leading-normal">
           {{ title }}
         </h3>
-        <div class="text-base lg:text-lg font-ternary leading-normal">
+        <div class="text-base font-ternary leading-normal">
           <time :datetime="started.toString()">
             {{ typeof started === "string" ? started : useDateFormat(started, "DD/MM/YYYY").value.toString() }}</time
           >
@@ -44,16 +44,16 @@ const toggleDetails = useToggle(showTechnicalDetails)
         </div>
       </div>
     </div>
-    <div class="flex flex-col self-stretch gap-3 md:landscape:col-span-1 w-full">
-      <h4 class="text-lg lg:text-2xl font-bold leading-normal">Detalhes</h4>
+    <div class="flex flex-col self-stretch gap-3 w-full">
+      <h4 class="text-md lg:text-2xl font-bold leading-normal">Detalhes</h4>
       <div class="flex flex-col gap-3 w-full">
         <div class="flex self-stretch flex-col pb-3 gap-2 w-full">
           <div
             tabindex="0"
-            class="flex self-stretch items-center justify-between border-b border-ntl-200/50 gap-3 py-1"
+            class="flex self-stretch items-center justify-between border-b border-ntl-200/50 gap-3 py-1 cursor-pointer"
             @click="toggleDetails()"
             @keyup.enter.exact="toggleDetails()">
-            <h5 class="font-medium text-md lg:text-lg mt-2 normal-case">Tecnólogias e Frameworks</h5>
+            <h5 class="font-medium text-md max-sm:text-base mt-2 normal-case">Tecnólogias e Frameworks</h5>
             <Icon
               v-if="showTechnicalDetails"
               class="text-lg text-ntl-100"
@@ -76,8 +76,9 @@ const toggleDetails = useToggle(showTechnicalDetails)
               <li
                 v-for="skill in tecnologies"
                 :key="skill.icon"
-                class="flex w-max basis-3/12 snap-center">
+                class="flex w-full flex-auto basis-3/12 snap-center">
                 <common-card-info
+                  class="w-full"
                   tabindex="-1"
                   :title="skill.title"
                   :icon="skill.icon"
@@ -87,33 +88,35 @@ const toggleDetails = useToggle(showTechnicalDetails)
           </Transition>
         </div>
         <div class="flex flex-col self-stretch gap-3">
-          <p class="text-base uppercase font-primary font-normal tracking-wide">
+          <p class="max-sm:text-sm text-base uppercase font-primary font-normal tracking-wide">
             Status:
-            <span class="text-primary-200 font-secundary font-normal first-letter:capitalize normal-case">
-              {{ status }}
+            <span class="text-primary-200 font-secundary font-normal capitalize">
+              {{ status.trim() }}
             </span>
           </p>
           <div class="flex flex-col gap-1">
-            <h5 class="text-base lg:text-md uppercase font-primary font-normal tracking-wide">Descrição</h5>
+            <h5 class="max-sm:text-sm text-base lg:text-md uppercase font-primary font-normal tracking-wide">
+              Descrição
+            </h5>
             <div class="flex flex-col gap-2">
-              <p class="text-base lg:text-md text-ntl-50 leading-loose max-w-prose">
+              <p class="text-base text-ntl-50 leading-loose max-w-pros first-letter:capitalize">
                 {{ description }}
               </p>
-              <div class="flex items-center gap-3">
+              <div class="flex flex-wrap items-center gap-3">
                 <NuxtLink
                   v-if="github"
                   :to="github"
                   target="_blank"
-                  class="inline-flex grow gap-3 justify-center items-center text-base lg:text-md font-medium px-6 pt-2 pb-[2px] rounded-sd bg-gradient-to-r from-secundary-400/80 to-secundary-500 hover:outline hover:outline-secundary-400 backdrop-blur-md transition-[outline] duration-300 ease-in">
+                  class="inline-flex grow gap-3 justify-between items-center text-base font-medium px-6 pt-2 pb-[2px] rounded-sd bg-gradient-to-r from-secundary-400/80 to-secundary-500 hover:outline hover:outline-secundary-400 backdrop-blur-md transition-[outline] duration-300 ease-in">
+                  Github do projeto
                   <Icon
                     class="!text-secundary-100 mb-1 text-lg"
                     name="uil:github" />
-                  Github do projeto
                 </NuxtLink>
                 <NuxtLink
                   v-if="deployUrl"
                   :to="deployUrl"
-                  class="inline-flex grow gap-3 justify-evenly items-center text-base lg:text-md font-medium hover:text-ntl-0 hover:outline hover:outline-secundary-400 transition-[outline] duration-300 ease-in px-6 pt-2 pb-[2px] rounded-sd">
+                  class="inline-flex grow gap-3 justify-between items-center text-base font-medium hover:text-ntl-0 hover:outline hover:outline-secundary-400 transition-[outline] duration-300 ease-in px-6 pt-2 pb-[2px] rounded-sd">
                   Visitar
                   <Icon
                     class="text-ntl-100 mb-1 text-lg"
