@@ -21,7 +21,7 @@ watch(sectionVisible, (v) => {
   <section
     id="my-certificates"
     ref="section"
-    class="flex w-full gap-3 md:landscape:gap-6 section-with-observer portfolio-section relative"
+    class="flex w-full gap-3 md:landscape:gap-6 lg:gap-6 section-with-observer portfolio-section relative"
     :class="{ 'translate-y-0': sectionVisible || triggered }">
     <div class="size-max">
       <Icon
@@ -78,7 +78,7 @@ watch(sectionVisible, (v) => {
       </defs>
     </svg>
     <div class="flex flex-col gap-6 lg:gap-8 w-full">
-      <h2 class="title">Meus Certificados</h2>
+      <h2 class="title lg:text-4xl max-sm:text-lg">Meus Certificados</h2>
       <ul class="flex relative flex-col gap-6 self-stretch">
         <li
           v-for="certification in certiticationsList"

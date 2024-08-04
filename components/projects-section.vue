@@ -83,7 +83,7 @@ watch(sectionVisible, (v) => {
       </defs>
     </svg>
     <div class="flex flex-col gap-6 lg:gap-8 w-full">
-      <h2 class="title">Meus projetos</h2>
+      <h2 class="title lg:text-4xl max-sm:text-lg">Meus projetos</h2>
       <ul class="flex relative flex-col gap-16 self-stretch">
         <li
           v-for="project in projectsList"

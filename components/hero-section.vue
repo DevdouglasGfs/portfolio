@@ -38,7 +38,7 @@ const stacks: Array<{ icon: string; name: string }> = [
 <template>
   <section
     ref="section"
-    class="portfolio-section relative grid grid-cols-2 md:landscape:grid-cols-4 gap-6 min-h-svh w-full max-w-full overflow-hidden">
+    class="portfolio-section relative grid grid-cols-2 md:landscape:grid-cols-4 lg:grid-cols-5 gap-6 min-h-svh w-full max-w-full overflow-hidden">
     <svg
       class="max-lg:block absolute z-0 isolate top-0 right-0"
       width="350"
@@ -155,7 +155,7 @@ const stacks: Array<{ icon: string; name: string }> = [
             área e na sua empresa
           </p>
         </div>
-        <ul class="inline-flex p-1 overflow-x-auto hide-scrollbar sm:flex-wrap gap-6">
+        <ul class="inline-flex p-1 overflow-x-auto hide-scrollbar sm:flex-wrap max-[420px]:flex-nowrap gap-6">
           <li
             v-for="topic in topics"
             :key="topic.to"
@@ -186,7 +186,7 @@ const stacks: Array<{ icon: string; name: string }> = [
         </NuxtLink>
       </div>
     </div>
-    <div class="relative contents lg:flex flex-col col-span-1 h-full max-h-full pb-6 gap-6 lg:max-h-[75%]">
+    <div class="relative contents lg:flex flex-col col-span-1 max-[1080px]:lg:col-span-2 h-full max-h-full pb-6 gap-6 lg:max-h-[75%]">
       <div
         class="max-md:inset-x-0 max-md:rounded-none max-lg:absolute max-lg:top-0 max-lg:right-0 flex flex-wrap items-center justify-center gap-2 p-6 md:landscape:p-4 lg:px-14 lg:py-6 bg-ntl-900 ring-1 ring-[#11FAC0]/30 backdrop-filter:blur-md text-ntl-0 uppercase font-primary max-sm:text-sm text-base lg:text-xl rounded-bl-sd lg:rounded-b-xl">
         Working at
@@ -198,7 +198,7 @@ const stacks: Array<{ icon: string; name: string }> = [
         </NuxtLink>
       </div>
       <div
-        class="hidden lg:flex justify-evenly p-2 gap-6 flex-wrap h-max max-h-full relative overflow-hidden rounded-3xl *:isolate *:border *:border-ntl-700 *:transition-colors *:duration-300 *:ease-in *:size-max *:flex-initial overflow-y-auto hide-scrollbar overscroll-contain">
+        class="hidden lg:flex justify-evenly p-2 gap-6 flex-wrap h-max max-h-full xl:justify-start relative overflow-hidden rounded-3xl *:isolate *:border *:border-ntl-700 *:transition-colors *:duration-300 *:ease-in *:size-max *:flex-initial overflow-y-auto hide-scrollbar overscroll-contain">
         <div
           v-for="stack in stacks"
           :key="stack.icon"
