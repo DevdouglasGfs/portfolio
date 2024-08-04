@@ -44,7 +44,7 @@ watch(sectionVisible, (v) => {
 <template>
   <section
     ref="section"
-    class="relative w-full px-16 flex flex-col md:landscape:grid md:landscape:grid-cols-2 gap-8 portfolio-section section-with-observer"
+    class="relative w-full px-16 flex flex-col md:landscape:grid lg:grid md:landscape:grid-cols-2 lg:grid-cols-2 gap-8 portfolio-section section-with-observer"
     :class="{ 'translate-y-0': sectionVisible || triggered }">
     <svg
       class="absolute -z-10 isolate top-3 right-3 max-w-full overflow-x-hidden"
@@ -96,8 +96,8 @@ watch(sectionVisible, (v) => {
       </defs>
     </svg>
     <div class="flex flex-col gap-2 md:landscape:col-span-1">
-      <h2 class="title">Quer saber de mais coisas?</h2>
-      <p class="text-ntl-50 text-base lg:text-md max-w-prose leading-loose">
+      <h2 class="title lg:text-4xl max-sm:text-lg">Quer saber de mais coisas?</h2>
+      <p class="text-ntl-50 max-sm:text-sm text-base max-w-prose leading-loose">
         Você pode entrar em contato comigo por alguma das minhas redes sociais e plataformas e sentir-se livre para que
         eu sane suas dúvidas! Vou responder assim que possível
         <Icon name="uil:smile-wink" />
@@ -114,7 +114,7 @@ watch(sectionVisible, (v) => {
             <span class="sr-only">Fale comigo no {{ plataform.title }}</span>
             <common-card-info
               tabindex="-1"
-              class="p-3 !flex-row items-center rounded-sd size-full"
+              class="lg:p-3 !flex-row items-center rounded-sd size-full"
               :title="plataform.title"
               :icon="plataform.icon"
               :icon-lg="plataform.iconLg" />

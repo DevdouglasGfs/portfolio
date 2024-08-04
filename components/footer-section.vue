@@ -11,12 +11,12 @@ const platforms = platformsForConnection.concat([
 </script>
 <template>
   <footer
-    class="flex flex-col gap-8 w-full max-w-full md:landscape:grid md:landscape:grid-cols-2 bg-secundary-500 px-16 py-6">
+    class="flex flex-col gap-8 w-full max-w-full md:landscape:grid lg:grid md:landscape:grid-cols-2 lg:grid-cols-2 bg-secundary-500 px-16 py-6">
     <div class="flex flex-col gap-6 md:landscape:col-span-1">
       <hgroup class="flex flex-col gap-2">
-        <h6 class="title leading-relaxed">Douglas S. Silva - Portfólio</h6>
+        <h6 class="title lg:text-4xl max-sm:text-lg leading-relaxed">Douglas S. Silva - Portfólio</h6>
         <p class="text-sm lg:text-base capitalize leading-relaxed">
-          Copyright © 2024<br />Todos os direitos autorais reservados
+          Copyright © 2024<br>Todos os direitos autorais reservados
         </p>
       </hgroup>
       <div class="flex flex-col">

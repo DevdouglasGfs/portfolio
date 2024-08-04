@@ -24,7 +24,7 @@ const changeActiveElement = (el: "soft" | "hard") => {
   <section
     id="my-skills"
     ref="section"
-    class="portfolio-section relative flex gap-3 md:landscape:gap-6 overflow-hidden section-with-observer"
+    class="portfolio-section relative flex gap-3 md:landscape:gap-6 lg:gap-6 overflow-hidden section-with-observer"
     :class="{ 'translate-y-0': sectionVisible || triggered }">
     <div class="size-max">
       <Icon
@@ -81,19 +81,19 @@ const changeActiveElement = (el: "soft" | "hard") => {
       </defs>
     </svg>
     <div class="flex self-stretch flex-col gap-8 w-full">
-      <h2 class="title">Minhas habilidades</h2>
-      <div class="self-stretch flex flex-col md:grid md:landscape:grid-cols-2 gap-3">
+      <h2 class="title lg:text-4xl max-sm:text-lg">Minhas habilidades</h2>
+      <div class="self-stretch flex flex-col md:grid md:landscape:grid-cols-2 lg:grid-cols-2 gap-3">
         <!-- soft -->
-        <div class="flex flex-col gap-3 flex-auto md:landscape:col-span-1 md:landscape:min-w-1/2">
+        <div class="flex flex-col gap-3 flex-auto">
           <div
             role="group"
             class="self-stretch">
             <div
               tabindex="0"
-              class="flex self-stretch items-center justify-between border-b border-ntl-200/50 gap-3 py-1"
+              class="flex self-stretch items-center justify-between border-b border-ntl-200/50 gap-3 py-1 cursor-pointer"
               @click="changeActiveElement('soft')"
               @keyup.enter.exact="changeActiveElement('soft')">
-              <h3 class="text-md lg:text-lg mt-2 font-bold leading-tight capitalize">Soft skills</h3>
+              <h3 class="text-md mt-2 font-bold leading-tight capitalize">Soft skills</h3>
               <div class="p-1 flex">
                 <Icon
                   v-if="showSoftSkills"
@@ -115,11 +115,11 @@ const changeActiveElement = (el: "soft" | "hard") => {
               leave-to-class="opacity-0">
               <ul
                 v-show="showSoftSkills"
-                class="flex flex-wrap gap-3 max-h-60 overflow-y-auto snap-y snap-mandatory p-1 hide-scrollbar rounded-xl ring-1 ring-ntl-700">
+                class="self-stretch flex flex-wrap items-center gap-3 w-full max-h-60 overflow-y-auto snap-y snap-mandatory p-1 hide-scrollbar rounded-xl rounded-t-none border border-ntl-700 border-t-0">
                 <li
                   v-for="skill in skills?.soft"
                   :key="skill.title"
-                  class="flex-initial min-w-max basis-3/12 snap-center snap-always">
+                  class="flex-auto min-w-max basis-3/12 snap-center snap-always">
                   <common-card-info
                     type="compact"
                     tabindex="-1"
@@ -137,16 +137,18 @@ const changeActiveElement = (el: "soft" | "hard") => {
         </div>
         <!-- hard -->
         <div class="self-stretch w-full flex flex-col gap-3 md:landscape:col-span-1">
-          <h3 class="text-md lg:text-2xl font-bold leading-tight capitalize">Hard skills</h3>
+          <h3 class="text-md mt-2 font-bold leading-tight capitalize">Hard skills</h3>
           <div
             role="group"
             class="self-stretch">
             <div
               tabindex="0"
-              class="flex self-stretch items-center justify-between border-b border-ntl-200/50 gap-3 py-1"
+              class="flex self-stretch items-center justify-between border-b border-ntl-200/50 gap-3 py-1 cursor-pointer"
               @click="changeActiveElement('hard')"
               @keyup.enter.exact="changeActiveElement('hard')">
-              <h4 class="text-md lg:text-lg mt-2 font-semibold leading-tight">Linguagens, Frameworks e Ferramentas</h4>
+              <h4 class="text-md max-sm:text-base mt-2 font-semibold leading-tight">
+                Linguagens, Frameworks e Ferramentas
+              </h4>
               <Icon
                 v-if="showHardSkills"
                 class="text-lg text-ntl-100"
@@ -166,11 +168,11 @@ const changeActiveElement = (el: "soft" | "hard") => {
               leave-to-class="opacity-0">
               <ul
                 v-show="showHardSkills"
-                class="self-stretch flex flex-wrap items-center gap-3 w-full max-h-60 overflow-y-auto snap-y snap-mandatory p-1 hide-scrollbar rounded-xl ring-1 ring-ntl-700">
+                class="self-stretch flex flex-wrap items-center gap-3 w-full max-h-60 overflow-y-auto snap-y snap-mandatory p-1 hide-scrollbar rounded-xl rounded-t-none border border-ntl-700 border-t-0">
                 <li
                   v-for="skill in skills?.hard"
                   :key="skill.title"
-                  class="flex-initial basis-3/12 snap-center w-full">
+                  class="flex-auto basis-3/12 snap-center w-full">
                   <common-card-info
                     class="size-full"
                     tabindex="-1"

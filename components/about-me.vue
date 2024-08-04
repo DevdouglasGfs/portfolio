@@ -37,7 +37,7 @@ watch(sectionVisible, (v) => {
   <section
     id="who-i-am"
     ref="section"
-    class="relative flex gap-3 md:landscape:gap-6 overflow-visible portfolio-section w-full section-with-observer"
+    class="relative flex gap-3 md:landscape:gap-6 lg:gap-6 overflow-visible portfolio-section w-full section-with-observer"
     :class="{ '!translate-y-0': sectionVisible || triggered }">
     <svg
       class="max-lg:block absolute -z-10 isolate top-0 left-0 max-w-full overflow-x-hidden"
@@ -93,10 +93,10 @@ watch(sectionVisible, (v) => {
         class="title text-primary-500"
         name="uil:question-circle" />
     </div>
-    <div class="self-stretch flex flex-col md:landscape:grid md:landscape:grid-cols-2 gap-8">
+    <div class="self-stretch flex flex-col md:landscape:grid lg:grid md:landscape:grid-cols-2 lg:grid-cols-2 gap-8">
       <div class="flex flex-col gap-3 md:landscape:col-span-1">
-        <h2 class="title">Quem sou eu</h2>
-        <p class="text-base lg:text-lg max-w-prose mx-auto leading-relaxed">
+        <h2 class="title lg:text-4xl max-sm:text-lg">Quem sou eu</h2>
+        <p class="text-base max-sm:text-sm max-w-prose leading-relaxed">
           Eu sou um programador Front-End com 3 anos de experiências prática realizadas com e sem um time. Já trabalhei
           com diversas tecnologias e sou experiente em <NuxtLink to="https://vuejs.org/">Vue.js</NuxtLink>. O meu foco
           desde que comecei é me tornar um programador Full-Stack e, posteriormente, explorar outros campos da
@@ -108,15 +108,15 @@ watch(sectionVisible, (v) => {
           alt=""
           placeholder />
       </div>
-      <div class="self-stretch flex flex-col gap-3 basis-1/2 md:landscape:col-span-1">
-        <h3 class="font-bold leading-tight text-md lg:text-lg">Resumo</h3>
+      <div class="self-stretch flex flex-col gap-3 basis-1/2">
+        <h3 class="font-bold leading-tight text-md">Resumo</h3>
         <ul class="self-stretch flex flex-wrap gap-6">
           <li
             v-for="point in resumePoints"
             :key="point.title">
             <common-card-info
               tabindex="-1"
-              class="flex-auto first-letter:capitalize normal-case max-w-40 md:landscape:max-w-36"
+              class="flex-auto first-letter:capitalize normal-case basis-1/3"
               :title="point.title"
               :icon="point.icon" />
           </li>

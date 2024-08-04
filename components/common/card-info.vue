@@ -11,7 +11,7 @@ export type CardProps = {
 <template>
   <button
     v-if="type !== 'compact'"
-    class="p-3 lg:p-6 capitalize rounded-sd ring-1 bg-ntl-800 ring-ntl-600 flex flex-col gap-2 transition max-lg:duration-200 duration-500 ease-in hover:active:ring-ntl-400 hover:active:bg-ntl-700 text-left group/button">
+    class="p-3 lg:p-6 capitalize rounded-sd ring-1 bg-ntl-800 ring-ntl-600 flex flex-col gap-2 transition max-lg:duration-200 duration-500 ease-in hover:active:ring-ntl-400 hover:active:bg-ntl-700 max-sm:text-sm text-left group/button">
     <Icon
       v-if="icon && iconLg"
       :name="icon"

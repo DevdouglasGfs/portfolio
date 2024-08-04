@@ -24,7 +24,7 @@
 
 @layer utilities {
     .title {
-        @apply font-primary text-2xl lg:text-5xl capitalize leading-tight;
+        @apply font-primary text-2xl capitalize leading-tight;
     }
 }
 
