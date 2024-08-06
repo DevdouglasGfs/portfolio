@@ -24,7 +24,7 @@
     "@nuxtjs/seo": "^2.0.0-rc.8",
     "@nuxtjs/tailwindcss": "^6.11.4",
     "eslint": "^9.7.0",
-    "nuxt": "^3.11.2",
+    "nuxt": "^3.12.4",
     "nuxt-icon": "^0.6.9",
     "prettier": "3.3.2",
     "typescript": "^5.4.2"
