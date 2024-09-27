@@ -32,40 +32,12 @@ const projectsList: Array<ProjectDTO> = [
     ],
   },
   {
-    title: "WhyApp",
-    started: "21/04/2024",
-    finished: "13/04/2024",
-    github: "https://github.com/devdouglasgfs/whyapp-frontend",
-    image: "/assets/images/projects/whyapp.png",
-    deployUrl: "https://whyapp.onrender.com/login",
-    description: "WhyApp é um aplicativo de bate-papo projetado para facilitar a comunicação entre os usuários.",
-    status: "não continuado",
-    tecnologies: [
-      {
-        title: "React",
-        icon: "uil:react",
-      },
-      {
-        title: "TypeScript",
-        icon: "mdi:language-typescript",
-      },
-      {
-        title: "Vite",
-        icon: "simple-icons:vite",
-      },
-      {
-        title: "Figma",
-        icon: "carbon:logo-figma",
-      },
-    ],
-  },
-  {
     title: "Este portfólio",
     started: "08/03/2024",
     finished: "10/03/2024",
     github: "https://github.com/devdouglasgfs/portfolio",
     image: "/assets/images/projects/portfolio.png",
-    deployUrl: "https://devdouglassilva.xyz",
+    deployUrl: "https://devdouglasportfolio.netlify.app",
     description:
       "Meu portfólio pessoal foi desenvolvido com Nuxt, Vue e Tailwind e tem sua prototipagem no Figma, tem o propósito de exibir meus projetos, habilidades e informações sobre mim.",
     status: "concluido",
@@ -98,7 +70,7 @@ const projectsList: Array<ProjectDTO> = [
     finished: "04/04/2024",
     description:
       "Um site dedicado a leitura de novels(Novelas traduzido para o Português) autorais para a Vulcan Scanlator. Tem sua prototipagem feita no Figma e está sendo desenvolvido usando principalmente Vite, Vue e Tailwind no front-end.",
-    status: "não continuado",
+    status: "Suporte técnico",
     image: "/assets/images/projects/vulcan-novels.png",
     tecnologies: [
       {
