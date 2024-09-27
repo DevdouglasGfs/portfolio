@@ -15,7 +15,7 @@ useSeoMeta({
     url: "/assets/images/identity/og-image.png",
   },
   twitterImage: "/assets/images/identity/og-image.png",
-  ogUrl: "https://devdouglasportfolio.netlify.app/",
+  ogUrl: "https://devdouglasportfolio.netlify.app",
   creator: "Douglas S. Silva",
 })
 </script>
