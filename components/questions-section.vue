@@ -106,7 +106,7 @@ watch(sectionVisible, (v) => {
         <li
           v-for="plataform in platformsForConnection"
           :key="plataform.to"
-          class="self-stretch flex-auto basis-1/3">
+          class="self-stretch">
           <NuxtLink
             class="size-full rounded-sd"
             :to="plataform.to"
@@ -114,8 +114,7 @@ watch(sectionVisible, (v) => {
             <span class="sr-only">Fale comigo no {{ plataform.title }}</span>
             <common-card-info
               tabindex="-1"
-              class="lg:p-3 !flex-row items-center rounded-sd size-full"
-              :title="plataform.title"
+              class="lg:p-3 !flex-row items-center max-w-fit rounded-sd size-full"
               :icon="plataform.icon"
               :icon-lg="plataform.iconLg" />
           </NuxtLink>
