@@ -97,10 +97,11 @@ watch(sectionVisible, (v) => {
       <div class="flex flex-col gap-3 md:landscape:col-span-1">
         <h2 class="title lg:text-4xl max-sm:text-lg">Quem sou eu</h2>
         <p class="text-base max-sm:text-sm max-w-prose leading-relaxed">
-          Eu sou um programador Front-End com 3 anos de experiências prática realizadas com e sem um time. Já trabalhei
-          com diversas tecnologias e sou experiente em <NuxtLink to="https://vuejs.org/">Vue.js</NuxtLink>. O meu foco
-          desde que comecei é me tornar um programador Full-Stack e, posteriormente, explorar outros campos da
-          programação.
+          Eu sou um programador Front-End com cerca de 4 anos de experiências prática realizadas com e sem um time e
+          atualmente atuo como estágiario no
+          <NuxtLink to="https://instituto.taqtile.com.br/">instituto Taqtile</NuxtLink> . Já trabalhei com diversas
+          tecnologias e sou experiente em <NuxtLink to="https://vuejs.org/">Vue.js</NuxtLink>. O meu foco desde que
+          comecei é me tornar um programador Full-Stack e, posteriormente, explorar outros campos da programação.
         </p>
         <NuxtImg
           class="self-stretch h-[300px] lg:h-[400px] object-scale-down w-full"
