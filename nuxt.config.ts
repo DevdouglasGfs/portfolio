@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: false },
   css: ["~/assets/css/tailwind.css"],
+
   modules: [
     "@nuxt/image",
     "@vueuse/nuxt",
@@ -12,6 +13,7 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "@nuxt/eslint",
   ],
+
   eslint: {
     config: {
       typescript: {
@@ -19,6 +21,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   googleFonts: {
     families: {
       "Krona One": true,
@@ -26,14 +29,18 @@ export default defineNuxtConfig({
       Manjari: true,
     },
   },
+
   image: {
     format: ["avif", "webp", "png", "jpg"],
   },
+
   router: {
     options: {
       scrollBehaviorType: "smooth",
     },
   },
+
   ogImage: { enabled: false },
   schemaOrg: { enabled: false },
+  compatibilityDate: "2024-09-29",
 })
