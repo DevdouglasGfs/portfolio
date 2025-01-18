@@ -28,5 +28,6 @@
     "nuxt-icon": "^0.6.9",
     "prettier": "3.3.2",
     "typescript": "^5.4.2"
-  }
+  },
+  "version": "0.1.1"
 }
