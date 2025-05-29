@@ -26,6 +26,12 @@
     .title {
         @apply font-primary text-2xl capitalize leading-tight;
     }
+
+    .merge-edges-with-body {
+        --direction: right;
+        background-image: linear-gradient(to var(--direction), var(--tw-gradient-stops));
+        @apply absolute inset-y-0 w-10 from-ntl-900 to-ntl-900/0;
+    }
 }
 
 p a {
