@@ -1,44 +1,20 @@
 <script lang="ts">
 import type { CardProps } from "./common/card-info.vue"
 export const platformsForConnection: Array<CardProps & { to: string }> = [
-  {
-    title: "instagram",
-    icon: "uil:instagram",
-    iconLg: true,
-    to: "https://www.instagram.com/fullstack_douglas_silva",
-  },
-  {
-    title: "Whatsapp",
-    icon: "uil:whatsapp",
-    iconLg: true,
-    to: "https://wa.me/+55038999392757",
-  },
-  {
-    title: "LinkedIn",
-    icon: "uil:linkedin",
-    iconLg: true,
-    to: "https://www.linkedin.com/in/developer-douglas-silva",
-  },
-  {
-    title: "Discord",
-    icon: "mdi:discord",
-    iconLg: true,
-    to: "https://discord.com/invite/AcWteDjNsh",
-  },
-  {
-    title: "Behance",
-    icon: "mdi:behance",
-    iconLg: true,
-    to: "https://www.behance.net/devdouglassilva",
-  },
+  { title: "instagram", icon: "uil:instagram", iconLg: true, to: "https://www.instagram.com/fullstack_douglas_silva" },
+  { title: "Whatsapp", icon: "uil:whatsapp", iconLg: true, to: "https://wa.me/+55038999392757" },
+  { title: "LinkedIn", icon: "uil:linkedin", iconLg: true, to: "https://www.linkedin.com/in/developer-douglas-silva" },
+  { title: "Discord", icon: "mdi:discord", iconLg: true, to: "https://discord.com/invite/AcWteDjNsh" },
+  { title: "Behance", icon: "mdi:behance", iconLg: true, to: "https://www.behance.net/devdouglassilva" },
 ]
 </script>
 <script setup lang="ts">
 const section = ref<HTMLElement>()
 const triggered = ref(false)
 const sectionVisible = useElementVisibility(section)
-watch(sectionVisible, (v) => {
-  if (v === true) triggered.value = true
+watch(sectionVisible, (visible) => {
+  if (!visible) return
+  triggered.value = true
 })
 </script>
 <template>
@@ -47,7 +23,7 @@ watch(sectionVisible, (v) => {
     class="relative w-full px-16 flex flex-col md:landscape:grid lg:grid md:landscape:grid-cols-2 lg:grid-cols-2 gap-8 portfolio-section section-with-observer"
     :class="{ 'translate-y-0': sectionVisible || triggered }">
     <svg
-      class="absolute -z-10 isolate top-3 right-3 max-w-full overflow-x-hidden"
+      class="absolute -z-10 isolate top-3 right-3 max-w-full overflow-visible"
       width="650"
       height="600"
       viewBox="0 0 650 300"

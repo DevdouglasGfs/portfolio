@@ -155,18 +155,23 @@ const stacks: Array<{ icon: string; name: string }> = [
             área e na sua empresa
           </p>
         </div>
-        <ul class="inline-flex p-1 overflow-x-auto hide-scrollbar sm:flex-wrap max-[420px]:flex-nowrap gap-6">
-          <li
+        <div class="relative flex">
+          <div class="merge-edges-with-body -left-2 sm:hidden" />
+          <div class="merge-edges-with-body right-0 [--direction:left] sm:hidden" />
+
+          <ul class="inline-flex p-1 overflow-x-auto hide-scrollbar sm:flex-wrap max-[420px]:flex-nowrap gap-6">
+            <li
             v-for="topic in topics"
             :key="topic.to"
             class="block flex-initial">
             <common-card-info
-              :title="topic.title"
-              :icon="topic.icon"
-              class="md:landscape:items-center lg:!items-start min-w-max max-lg:flex-wrap hover:active:-translate-y-3.5 hover:active:shadow-lg hover:active:shadow-secundary-600/25"
-              @click="navigateTo(topic.to)" />
+            :title="topic.title"
+            :icon="topic.icon"
+            class="md:landscape:items-center lg:!items-start min-w-max max-lg:flex-wrap hover:active:-translate-y-3.5 hover:active:shadow-lg hover:active:shadow-secundary-600/25"
+            @click="navigateTo(topic.to)" />
           </li>
         </ul>
+      </div>
       </div>
       <div class="flex items-center gap-2 self-stretch">
         <!-- <NuxtLink -->
