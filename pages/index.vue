@@ -5,8 +5,8 @@ definePageMeta({
 useSeoMeta({
   title: "Douglas Silva - Portfólio",
   ogTitle: "Portfólio - Desenvolvedor Front-End Douglas Silva",
-  description: "Portfólio do deselvolvedor front-end, atualmente trabalhando no Instituto Taqtile, Douglas S. Silva",
-  ogDescription: "Portfólio do deselvolvedor front-end, atualmente trabalhando no Instituto Taqtile, Douglas S. Silva",
+  description: "Portfólio do deselvolvedor, atualmente trabalhando na Guiná, Douglas S. Silva",
+  ogDescription: "Portfólio do deselvolvedor, atualmente trabalhando na Guiná, Douglas S. Silva",
   ogLocale: "pt-br",
   ogType: "website",
   twitterCard: "summary",

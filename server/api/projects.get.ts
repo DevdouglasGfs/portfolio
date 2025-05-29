@@ -104,7 +104,6 @@ const projectsList: Array<ProjectDTO> = [
     started: "27/03/2024",
     finished: "28/03/2024",
     github: "https://github.com/devdouglasgfs/taxas-atuais",
-    deployUrl: "https://taxasatuais.devdouglassilva.xyz",
     image: "/assets/images/projects/taxas-atuais.png",
     description: "Uma aplicação para fazer consultas sobre o valor atual das taxas usando a API do BrasilAPI.",
     status: "finalizado",
