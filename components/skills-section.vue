@@ -11,13 +11,18 @@ const showHardSkills = ref(false)
 const section = ref<HTMLElement>()
 const triggered = ref(false)
 const sectionVisible = useElementVisibility(section)
-watch(sectionVisible, (v) => {
-  if (v === true) triggered.value = true
+watch(sectionVisible, (visible) => {
+  if (visible) triggered.value = true
 })
 
 const changeActiveElement = (el: "soft" | "hard") => {
-  if (el === "soft") (showHardSkills.value = false), (showSoftSkills.value = !showSoftSkills.value)
-  else (showSoftSkills.value = false), (showHardSkills.value = !showHardSkills.value)
+  if (el === "soft") {
+    showHardSkills.value = false
+    showSoftSkills.value = !showSoftSkills.value
+  } else {
+    showSoftSkills.value = false
+    showHardSkills.value = !showHardSkills.value
+  }
 }
 </script>
 <template>
@@ -107,12 +112,12 @@ const changeActiveElement = (el: "soft" | "hard") => {
               </div>
             </div>
             <Transition
-              enter-active-class="transition-opacity duration-500 ease-in-out overflow-hidden"
-              enter-from-class="opacity-0"
-              enter-to-class="opacity-100"
-              leave-active-class="transition-opacity duration-500 ease-in-out"
+              enter-active-class="transition-all duration-300 ease-in-out overflow-hidden"
+              enter-from-class="opacity-0 [interpolate-size:allow-keywords] h-0"
+              enter-to-class="opacity-100 h-auto"
+              leave-active-class="transition-all duration-100 ease-in-out"
               leave-from-class="opacity-100"
-              leave-to-class="opacity-0">
+              leave-to-class="opacity-0 hidden">
               <ul
                 v-show="showSoftSkills"
                 class="self-stretch flex flex-wrap items-center gap-3 w-full max-h-60 overflow-y-auto snap-y snap-mandatory p-1 hide-scrollbar rounded-xl rounded-t-none border border-ntl-700 border-t-0">
@@ -160,12 +165,12 @@ const changeActiveElement = (el: "soft" | "hard") => {
               <span class="sr-only">Expandir lista de hard skills</span>
             </div>
             <Transition
-              enter-active-class="transition-opacity duration-500 ease-in-out overflow-hidden"
-              enter-from-class="opacity-0"
-              enter-to-class="opacity-100"
-              leave-active-class="transition-opacity duration-500 ease-in-out"
+              enter-active-class="transition-all duration-300 ease-in-out overflow-hidden"
+              enter-from-class="opacity-0 [interpolate-size:allow-keywords] h-0"
+              enter-to-class="opacity-100 h-auto"
+              leave-active-class="transition-all duration-100 ease-in-out"
               leave-from-class="opacity-100"
-              leave-to-class="opacity-0">
+              leave-to-class="opacity-0 hidden">
               <ul
                 v-show="showHardSkills"
                 class="self-stretch flex flex-wrap items-center gap-3 w-full max-h-60 overflow-y-auto snap-y snap-mandatory p-1 hide-scrollbar rounded-xl rounded-t-none border border-ntl-700 border-t-0">
