@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt/config'
+import { defineNuxtConfig } from "nuxt/config"
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: false,
@@ -42,7 +42,15 @@ export default defineNuxtConfig({
     },
   },
 
+  hub: {
+    cache: true,
+  },
+
+  nitro: {
+    preset: "cloudflare-pages",
+  },
+
   ogImage: { enabled: false },
   schemaOrg: { enabled: false },
-  compatibilityDate: "2024-09-29",
+  compatibilityDate: "2025-08-05",
 })
