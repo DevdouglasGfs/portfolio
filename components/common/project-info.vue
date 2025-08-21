@@ -34,7 +34,7 @@ const toggleDetails = useToggle(showTechnicalDetails)
           v-if="image"
           class="!aspect-[16/9] object-cover w-full rounded-xl transition-[filter] duration-200 delay-200 ease-in-out brightness-50 hover:active:brightness-100 group-hover:brightness-100 group-active:brightness-100"
           :src="image"
-          :alt="`${title}`"
+          :alt="title"
           loading="lazy" />
         <div
           v-else
