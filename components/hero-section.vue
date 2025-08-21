@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import type { CardProps } from "./common/card-info.vue"
+import ContactButton from "./contact-button.vue";
+import GithubButton from "./github-button.vue";
 
 const topics: Array<CardProps & { to: string }> = [
   {
@@ -150,7 +152,7 @@ const stacks: Array<{ icon: string; name: string }> = [
             </div>
           </hgroup>
           <p class="text-base max-sm:text-sm tracking-wide max-w-prose leading-loose">
-            Olá, seja bem-vindo(a) ao meu portfólio.<br >
+            Olá, seja bem-vindo(a) ao meu portfólio.<br />
             Separei alguns tópicos para você conhecer a mim, o meu trabalho e minhas qualificações para estar atuando na
             área e na sua empresa
           </p>
@@ -161,59 +163,37 @@ const stacks: Array<{ icon: string; name: string }> = [
 
           <ul class="inline-flex p-1 overflow-x-auto hide-scrollbar sm:flex-wrap max-[420px]:flex-nowrap gap-6">
             <li
-            v-for="topic in topics"
-            :key="topic.to"
-            class="block flex-initial">
-            <common-card-info
-            :title="topic.title"
-            :icon="topic.icon"
-            class="md:landscape:items-center lg:!items-start min-w-max max-lg:flex-wrap hover:active:-translate-y-3.5 hover:active:shadow-lg hover:active:shadow-secundary-600/25"
-            @click="navigateTo(topic.to)" />
-          </li>
-        </ul>
-      </div>
+              v-for="topic in topics"
+              :key="topic.to"
+              class="block flex-initial">
+              <common-card-info
+                :title="topic.title"
+                :icon="topic.icon"
+                class="md:landscape:items-center lg:!items-start min-w-max max-lg:flex-wrap hover:active:-translate-y-3.5 hover:active:shadow-lg hover:active:shadow-secondary-600/25"
+                @click="navigateTo(topic.to)" />
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="flex items-center gap-2 self-stretch">
-        <!-- <NuxtLink -->
-        <!-- to="https://wa.me/+55038999392757" -->
-        <!-- target="_blank" -->
-        <!-- class="button font-medium transition-colors ease-in-out duration-200 lg:duration-300 tracking-wide bg-gradient-to-r from-secundary-600 to-secundary-700 hover:active:from-secundary-700 hover:active:to-secundary-800"> -->
-        <!-- <span class="sr-only">Mandar mensagem no whatsapp</span> -->
-        <!-- Contrate-Me! -->
-        <!-- </NuxtLink> -->
-        <NuxtLink
-          to="https://github.com/DevDouglasGfs"
-          class="flex items-center gap-2 button max-sm:text-sm ring-1 ring-ntl-0/15 transition-[box-shadow,transform] duration-200 ease-in-out shadow-[0px_4px_8px_#7A40FF] hover:shadow-[0px_8px_12px_#7A40FF] hover:-translate-y-2">
-          <icon
-            class="text-lg max-sm:text-md -mt-2"
-            name="uil:github" />
-          Github
-        </NuxtLink>
+        <ContactButton redirect-url="https://wa.me/+55038999392757" />
+        <GithubButton />
       </div>
     </div>
-    <div class="relative contents lg:flex flex-col col-span-1 max-[1080px]:lg:col-span-2 h-full max-h-full pb-6 gap-6 lg:max-h-[75%]">
-      <div
-        class="max-md:inset-x-0 max-md:rounded-none max-lg:absolute max-lg:top-0 max-lg:right-0 flex flex-wrap items-center justify-center gap-2 p-6 md:landscape:p-4 lg:px-14 lg:py-6 bg-ntl-900 ring-1 ring-[#11FAC0]/30 backdrop-filter:blur-md text-ntl-0 uppercase font-primary max-sm:text-sm text-base lg:text-xl rounded-bl-sd lg:rounded-b-xl">
-        Working at
-        <NuxtLink
-          class="text-[#11FAC0] min-w-fit border-b-2 border-dashed border-spacing-4 border-ntl-0/40 hover:active:border-ntl-0/80 hover:active:text-[#5EFA11] transition-colors duration-200 ease-in"
-          to="https://instituto.taqtile.com.br">
-          Instaq
-          <span class="text-current animate-[pulse_1500ms_infinite] font-bold">|</span>
-        </NuxtLink>
-      </div>
+    <div
+      class="relative contents lg:flex flex-col col-span-1 max-[1080px]:lg:col-span-2 h-full max-h-full pb-6 gap-6 lg:max-h-[75%]">
       <div
         class="hidden lg:flex justify-evenly p-2 gap-6 flex-wrap h-max max-h-full xl:justify-start relative overflow-hidden rounded-3xl *:isolate *:border *:border-ntl-700 *:transition-colors *:duration-300 *:ease-in *:size-max *:flex-initial overflow-y-auto hide-scrollbar overscroll-contain">
         <div
           v-for="stack in stacks"
           :key="stack.icon"
           :title="stack.name"
-          class="relative p-8 rounded-lg group bg-ntl-800 hover:active:bg-primary-600 hover:bg-gradient-to-br hover:from-ntl-600 hover:via-secundary-500 hover:via-10% hover:to-secundary-800">
+          class="relative p-8 rounded-lg group bg-ntl-800 hover:active:bg-primary-600 hover:bg-gradient-to-br hover:from-ntl-600 hover:via-secondary-500 hover:via-10% hover:to-secondary-800">
           <icon
             class="size-6 text-ntl-100 group-hover:!text-ntl-0"
             :name="stack.icon" />
           <div
-            class="absolute opacity-0 bottom-0 pt-1 inset-x-0 group-hover:bg-ntl-800 group-hover:flex group-hover:items-center group-hover:justify-center group-hover:opacity-100 text-ntl-50 capitalize border-t border-secundary-500 transition-[opacity,background-color] duration-100 w-full text-center">
+            class="absolute opacity-0 bottom-0 pt-1 inset-x-0 group-hover:bg-ntl-800 group-hover:flex group-hover:items-center group-hover:justify-center group-hover:opacity-100 text-ntl-50 capitalize border-t border-secondary-500 transition-[opacity,background-color] duration-100 w-full text-center">
             {{ stack.name }}
           </div>
         </div>

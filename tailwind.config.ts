@@ -5,7 +5,7 @@ export default {
   theme: {
     fontFamily: {
       primary: "Krona One",
-      secundary: "Manjari",
+      secondary: "Manjari",
       ternary: "Julius Sans One",
     },
     colors: {
@@ -43,17 +43,17 @@ export default {
       "primary-800": "#0B578A",
       "primary-900": "#0B4269",
 
-      "secundary-50": "#F3F1FF",
-      "secundary-100": "#EAE5FF",
-      "secundary-200": "#D7CFFF",
-      "secundary-300": "#B9A8FF",
-      "secundary-400": "#9976FF",
-      "secundary-500": "#7A40FF",
-      "secundary-600": "#6C19FF",
-      "secundary-700": "#6714FA",
-      "secundary-800": "#4F05D2",
-      "secundary-900": "#4207AB",
-      "secundary-950": "#260075",
+      "secondary-50": "#F3F1FF",
+      "secondary-100": "#EAE5FF",
+      "secondary-200": "#D7CFFF",
+      "secondary-300": "#B9A8FF",
+      "secondary-400": "#9976FF",
+      "secondary-500": "#7A40FF",
+      "secondary-600": "#6C19FF",
+      "secondary-700": "#6714FA",
+      "secondary-800": "#4F05D2",
+      "secondary-900": "#4207AB",
+      "secondary-950": "#260075",
     },
     fontSize: {
       xsm: "10px",

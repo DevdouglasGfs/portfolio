@@ -30,6 +30,7 @@ export default defineNuxtConfig({
       "Julius Sans One": true,
       Manjari: true,
     },
+    'display': 'swap'
   },
 
   image: {

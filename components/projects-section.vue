@@ -1,18 +1,17 @@
 <script setup lang="ts">
+import type { ProjectStatus } from "~/@types/projects"
 import type { CardProps } from "./common/card-info.vue"
-
 export type ProjectDTO = {
   title: string
-  status: string
+  status: ProjectStatus
   started: Date | string
   finished?: Date | string
   description: string
-  tecnologies: Array<CardProps>
+  technologies: Array<CardProps>
   github?: string
   image?: string
   deployUrl?: string
 }
-
 const projectsList: Ref<Array<ProjectDTO> | null> = useFetch<Array<ProjectDTO>>("/api/projects").data
 
 const section = ref<HTMLElement>()
