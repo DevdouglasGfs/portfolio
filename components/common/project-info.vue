@@ -118,6 +118,7 @@ const toggleDetails = useToggle(showTechnicalDetails)
                 <NuxtLink
                   v-if="deployUrl"
                   :to="deployUrl"
+                  target="_blank"
                   class="inline-flex grow gap-3 justify-between items-center text-base font-medium hover:text-ntl-0 hover:outline hover:outline-secondary-400 transition-[outline] duration-300 ease-in px-6 pt-2 pb-[2px] rounded-sd">
                   Visitar
                   <Icon
