@@ -138,6 +138,7 @@ const changeActiveElement = (el: "soft" | "hard") => {
           <NuxtImg
             class="h-[300px] object-scale-down lg:h-[400px] w-full"
             src="/assets/images/characters/waiting.png"
+            loading="lazy"
             alt="" />
         </div>
         <!-- hard -->

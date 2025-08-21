@@ -4,7 +4,8 @@ import type { CertificationDTO } from "../certifications-section.vue"
 defineProps<CertificationDTO>()
 </script>
 <template>
-  <article class="flex flex-col w-full md:landscape:grid lg:grid md:landscape:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-16">
+  <article
+    class="flex flex-col w-full md:landscape:grid lg:grid md:landscape:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-16">
     <div class="flex flex-col self-stretch gap-3 md:landscape:col-span-1">
       <div class="flex flex-wrap items-center gap-1 justify-between self-stretch">
         <h3 class="text-md lg:text-2xl capitalize font-bold leading-normal">{{ title }}</h3>
@@ -21,7 +22,7 @@ defineProps<CertificationDTO>()
           <span v-else>Até o momento</span>
         </div>
       </div>
-      <div class="relative isolate self-stretch rounded-xl overflow-hidden ring-1 ring-secundary-400">
+      <div class="relative isolate self-stretch rounded-xl overflow-hidden ring-1 ring-secondary-400">
         <NuxtImg
           v-if="image"
           class="!aspect-[16/9] object-cover w-full rounded-xl"

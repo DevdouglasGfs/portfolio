@@ -15,11 +15,11 @@ export type CardProps = {
     <Icon
       v-if="icon && iconLg"
       :name="icon"
-      class="text-secundary-400 text-3xl transition-colors duration-200 group-hover/button:text-secundary-300" />
+      class="text-secondary-400 text-3xl transition-colors duration-200 group-hover/button:text-secondary-300" />
     <Icon
       v-else-if="icon"
       :name="icon"
-      class="text-lg text-secundary-400 transition-colors duration-200 group-hover/button:text-secundary-300" />
+      class="text-lg text-secondary-400 transition-colors duration-200 group-hover/button:text-secondary-300" />
     {{ title }}
   </div>
   <div
@@ -28,11 +28,11 @@ export type CardProps = {
     <Icon
       v-if="icon && iconLg"
       :name="icon"
-      class="text-secundary-400 text-3xl transition-colors duration-200 group-hover/button:text-secundary-300" />
+      class="text-secondary-400 text-3xl transition-colors duration-200 group-hover/button:text-secondary-300" />
     <Icon
       v-else-if="icon"
       :name="icon"
-      class="text-lg text-secundary-400 transition-colors duration-200 group-hover/button:text-secundary-300" />
+      class="text-lg text-secondary-400 transition-colors duration-200 group-hover/button:text-secondary-300" />
     <span class="-mb-1">{{ title }}</span>
   </div>
 </template>

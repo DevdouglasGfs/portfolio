@@ -7,7 +7,8 @@ const showTechnicalDetails = ref(true)
 const toggleDetails = useToggle(showTechnicalDetails)
 </script>
 <template>
-  <article class="flex flex-col w-full max-w-full md:landscape:grid lg:grid md:landscape:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-16 group">
+  <article
+    class="flex flex-col w-full max-w-full md:landscape:grid lg:grid md:landscape:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-16 group">
     <div class="flex flex-col self-stretch gap-3 md:landscape:col-span-1">
       <div class="flex flex-wrap items-center gap-1 justify-between self-stretch">
         <h3 class="text-md lg:text-2xl capitalize font-bold leading-normal">
@@ -28,12 +29,13 @@ const toggleDetails = useToggle(showTechnicalDetails)
       </div>
       <div
         class="relative isolate self-stretch rounded-xl overflow-hidden ring-1"
-        :class="deployUrl ? 'ring-secundary-400' : 'ring-ntl-700'">
+        :class="deployUrl ? 'ring-secondary-400' : 'ring-ntl-700'">
         <NuxtImg
           v-if="image"
-          class="!aspect-[16/9] object-cover w-full rounded-xl transition-[filter] duration-300 delay-300 ease-in-out brightness-50 hover:active:brightness-100 group-hover:brightness-100 group-active:brightness-100"
+          class="!aspect-[16/9] object-cover w-full rounded-xl transition-[filter] duration-200 delay-200 ease-in-out brightness-50 hover:active:brightness-100 group-hover:brightness-100 group-active:brightness-100"
           :src="image"
-          :alt="`Imagem do projeto: ${title}`" />
+          :alt="`${title}`"
+          loading="lazy" />
         <div
           v-else
           class="!aspect-[16/9] object-cover w-full rounded-xl bg-ntl-800">
@@ -74,7 +76,7 @@ const toggleDetails = useToggle(showTechnicalDetails)
               v-show="showTechnicalDetails"
               class="w-full flex flex-wrap max-w-full items-center gap-3 max-h-60 snap-mandatory p-1 hide-scrollbar rounded-xl">
               <li
-                v-for="skill in tecnologies"
+                v-for="skill in technologies"
                 :key="skill.icon"
                 class="flex w-full flex-auto basis-3/12 snap-center">
                 <common-card-info
@@ -90,7 +92,7 @@ const toggleDetails = useToggle(showTechnicalDetails)
         <div class="flex flex-col self-stretch gap-3">
           <p class="max-sm:text-sm text-base uppercase font-primary font-normal tracking-wide">
             Status:
-            <span class="text-primary-200 font-secundary font-normal capitalize">
+            <span class="text-primary-200 font-secondary font-normal capitalize">
               {{ status.trim() }}
             </span>
           </p>
@@ -107,16 +109,16 @@ const toggleDetails = useToggle(showTechnicalDetails)
                   v-if="github"
                   :to="github"
                   target="_blank"
-                  class="inline-flex grow gap-3 justify-between items-center text-base font-medium px-6 pt-2 pb-[2px] rounded-sd bg-gradient-to-r from-secundary-400/80 to-secundary-500 hover:outline hover:outline-secundary-400 backdrop-blur-md transition-[outline] duration-300 ease-in">
+                  class="inline-flex grow gap-3 justify-between items-center text-base font-medium px-6 pt-2 pb-[2px] rounded-sd bg-gradient-to-r from-secondary-400/80 to-secondary-500 hover:outline hover:outline-secondary-400 backdrop-blur-md transition-[outline] duration-300 ease-in">
                   Github do projeto
                   <Icon
-                    class="!text-secundary-100 mb-1 text-lg"
+                    class="!text-secondary-100 mb-1 text-lg"
                     name="uil:github" />
                 </NuxtLink>
                 <NuxtLink
                   v-if="deployUrl"
                   :to="deployUrl"
-                  class="inline-flex grow gap-3 justify-between items-center text-base font-medium hover:text-ntl-0 hover:outline hover:outline-secundary-400 transition-[outline] duration-300 ease-in px-6 pt-2 pb-[2px] rounded-sd">
+                  class="inline-flex grow gap-3 justify-between items-center text-base font-medium hover:text-ntl-0 hover:outline hover:outline-secondary-400 transition-[outline] duration-300 ease-in px-6 pt-2 pb-[2px] rounded-sd">
                   Visitar
                   <Icon
                     class="text-ntl-100 mb-1 text-lg"
