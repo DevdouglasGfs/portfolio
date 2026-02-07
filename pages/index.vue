@@ -21,7 +21,7 @@ useSeoMeta({
 </script>
 <template>
   <main
-    class="grid grid-cols-2 auto-rows-min gap-56 lg:grid-cols-4 *:col-span-2 *:lg:col-span-4 pb-20 w-full max-w-full overflow-hidden">
+    class="grid grid-cols-2 auto-rows-min gap-56 lg:grid-cols-4 *:col-span-2 *:lg:col-span-4 pb-20 w-full max-w-screen-2xl mx-auto overflow-hidden">
     <hero-section />
     <about-me />
     <skills-section />
